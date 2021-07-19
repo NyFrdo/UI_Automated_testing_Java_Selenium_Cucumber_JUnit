@@ -27,7 +27,8 @@ public class CommonOperationStep extends BaseSeleniumStep {
         System.out.println(testvar);System.out.println(testvar);
         testvar = "TEST";testvar = "Rez";testvar = "Rez";testvar = "Rez";
 		testvar = "ceshi";testvar = "Rez";
-		testvar = "ABC";
+		System.out.println(testvar);System.out.println(testvar);
+		System.out.println(testvar);System.out.println(testvar);
     }
 
     public void inputValueToSearchCriteria(String value, String columnName) {
