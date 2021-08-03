@@ -25,7 +25,7 @@ public class CommonOperationStep extends BaseSeleniumStep {
 
     public static void test(){
         System.out.println(testvar);System.out.println(testvar);
-        testvar = "Rez";testvar = "sss";testvar = "Rez";
+        testvar = "Rez";testvar = "Rez";
         testvar = "Rez";
 		System.out.println(testvar);System.out.println(testvar);
     }
