@@ -1,8 +1,7 @@
 import java.sql.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class DBoperation {
     public static final String URL = "jdbc:sqlserver://192.168.101.220:62658;databasename=cmdctr_db";
@@ -43,6 +42,27 @@ public class DBoperation {
         return  pst.executeUpdate();
     }
 
+    public static void insertElementData(Map<String,String> inputElementMap, String patientKey, String caseNo ) throws Exception{
+        for (Map.Entry<String, String> entry : inputElementMap.entrySet()) {
+            String k = entry.getKey();
+            String v = entry.getValue();
+            String[] elementInfo = k.split(",");
+//            System.out.println(k + v);
+            switch (elementInfo[1]){
+                case "Integar":
+                    insertElementData(elementInfo[0],patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),Integer.valueOf(v));
+                    DataConvert.executeJobAndAssertResult();
+                    break;
+                case "String":
+                    insertElementData(elementInfo[0],patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),v);
+                    break;
+
+            }
+        }
+
+
+    }
+
     public static Integer insertElementData(String elementId,String patientKey,String caseNo ,String elementValue) throws Exception{
         List<String> list = new ArrayList<>();
         String sql = " insert into clin_cc_element_data (element_id,element_type,hosp,patient_key,case_no,adm_dtm,day_id,ref_data_dtm,data_status,record_key_1,record_key_2," +
@@ -55,6 +75,8 @@ public class DBoperation {
         pst.setString(4,elementValue);
         return  pst.executeUpdate();
     }
+
+
 
     public static Integer insertElementData(String elementId, String patientKey, String caseNo , Integer elementValueDtm) throws Exception{
         List<String> list = new ArrayList<>();
