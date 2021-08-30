@@ -295,10 +295,10 @@ public class Runner {
 //        DataConvert.littlerunnerWhenMultipleInput(multipleInputList,"500720","000000793");
 //        multipleInputList.clear();
 
-//
+
 //        System.out.println("10-65");
 //        DataConvert.littlerunner("102000","501000", 2,"000000793");
-//        DataConvert.littlerunner("702010","501000", "1","000000793");
+        DataConvert.littlerunner("702010","501000", "1","000000793");
 //
 //        multipleInputList.put(("102000"+","+"Integar"),"2");
 //        multipleInputList.put(("702010"+","+"String"),"1");
