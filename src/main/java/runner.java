@@ -1,3 +1,11 @@
+import org.junit.Assert;
+import sun.security.mscapi.PRNG;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -5,10 +13,50 @@ public class Runner {
     public static Map<String,String> multipleInputList = new LinkedHashMap<>();
 
     public static void main(String[] args) throws Exception{
+        fireRunner(true);
+        fireRunner(false);
+    }
+
+    public static void fireRunner(Boolean flag) throws  Exception{
         DBoperation.connect();
-//        System.out.println("1-5");
-//        DataConvert.littlerunner("100100","700100","89","000000793");
-//        DataConvert.littlerunner("100100","700100","80","000000793");
+        if (flag){
+            fireRunner("followRules","fail");
+        }else {
+            fireRunner("notFollowRules","succeed");
+        }
+    }
+
+    public static void fireRunner(String filePrefix,String notExpectedKeyword) throws  Exception{
+            File logFile = new File("log/log"+filePrefix+"Rules"+ LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmm")) +".txt");
+            emptyFile(logFile);
+            //set output object to file
+            System.setOut(new PrintStream(new FileOutputStream(logFile)));
+            selectRunner(filePrefix);
+            //reset output object to system output panel
+            System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream(FileDescriptor.out)),true));
+            Assert.assertFalse("Validate to generate output element, fail, please check log file",Files.readAllLines(logFile.toPath()).toString().contains(notExpectedKeyword));
+
+    }
+
+    public static void selectRunner(String flag) throws  Exception{
+        if (!flag.contains("not")) positiveRunner();else negativeRunner();
+    }
+
+    public static void emptyFile(File file) throws  Exception{
+        if (file.exists()){
+            file.delete();
+        }
+    }
+
+    public static void negativeRunner() throws  Exception{
+        System.out.println("1-5");
+        DataConvert.littlerunner("100100","700100","101","000000793");
+    }
+
+    public static void positiveRunner() throws  Exception{
+                System.out.println("1-5");
+        DataConvert.littlerunner("100100","700100","100","000000793");
+        DataConvert.littlerunner("100100","700100","99","000000793");
 //        DataConvert.littlerunner("100100","700100","181","000000793");
 //        DataConvert.littlerunner("100100","700100","191","000000793");
 //        System.out.println("1-6");
@@ -298,14 +346,14 @@ public class Runner {
 
 //        System.out.println("10-65");
 //        DataConvert.littlerunner("102000","501000", 2,"000000793");
-        DataConvert.littlerunner("702010","501000", "1","000000793");
+//        DataConvert.littlerunner("702101","501000", "1","000000793");
 //
 //        multipleInputList.put(("102000"+","+"Integar"),"2");
 //        multipleInputList.put(("702010"+","+"String"),"1");
 //        DataConvert.littlerunnerWhenMultipleInput(multipleInputList,"501000","000000793");
 //        multipleInputList.clear();
-
-
     }
+
+
 
 }
