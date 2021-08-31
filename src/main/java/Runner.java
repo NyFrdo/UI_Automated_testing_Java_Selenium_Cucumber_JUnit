@@ -1,3 +1,4 @@
+import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
 import sun.security.mscapi.PRNG;
 
@@ -20,22 +21,22 @@ public class Runner {
     public static void fireRunner(Boolean flag) throws  Exception{
         DBoperation.connect();
         if (flag){
-            fireRunner("followRules","fail");
+            fireRunner("follow","fail");
         }else {
-            fireRunner("notFollowRules","succeed");
+            fireRunner("not-Follow","succeed");
         }
     }
 
     public static void fireRunner(String filePrefix,String notExpectedKeyword) throws  Exception{
-            File logFile = new File("log/log"+filePrefix+"Rules"+ LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmm")) +".txt");
+            File logFile = new File("log/log-"+filePrefix+"-Rules"+ LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddhhmm")) +".txt");
             emptyFile(logFile);
             //set output object to file
             System.setOut(new PrintStream(new FileOutputStream(logFile)));
             selectRunner(filePrefix);
             //reset output object to system output panel
             System.setOut(new PrintStream(new BufferedOutputStream(new FileOutputStream(FileDescriptor.out)),true));
-            Assert.assertFalse("Validate to generate output element, fail, please check log file",Files.readAllLines(logFile.toPath()).toString().contains(notExpectedKeyword));
-
+            Assert.assertFalse("Validate "+filePrefix+", fail, please check log file",
+                    Files.readAllLines(logFile.toPath()).toString().contains(notExpectedKeyword));
     }
 
     public static void selectRunner(String flag) throws  Exception{
@@ -51,34 +52,46 @@ public class Runner {
     public static void negativeRunner() throws  Exception{
         System.out.println("1-5");
         DataConvert.littleRunner("100100","700100","101","000000793");
+        System.out.println("1-6");
+        DataConvert.littleRunner("100100","700101","90","000000793");
+        System.out.println("1-7");
+        DataConvert.littleRunner("100600","700601","90","000000793");
+        System.out.println("1-8");
+        DataConvert.littleRunner("100100","700111","110","000000793");
+        System.out.println("1-9");
+        DataConvert.littleRunner("100600","700611","110","000000793");
+        System.out.println("1-10");
+        DataConvert.littleRunner("100200","700200","50","000000793");
+        System.out.println("1-11");
+        DataConvert.littleRunner("100201","700201","50","000000793");
+        System.out.println("1-12");
+        DataConvert.littleRunner("100200","700202","45","000000793");
     }
 
     public static void positiveRunner() throws  Exception{
-                System.out.println("1-5");
+        System.out.println("1-5");
         DataConvert.littleRunner("100100","700100","100","000000793");
         DataConvert.littleRunner("100100","700100","99","000000793");
-//        DataConvert.littleRunner("100100","700100","181","000000793");
-//        DataConvert.littleRunner("100100","700100","191","000000793");
-//        System.out.println("1-6");
-//        DataConvert.littleRunner("100100","700101","80","000000793");
-//        DataConvert.littleRunner("100100","700101","70","000000793");
-//        DataConvert.littleRunner("100100","700101","200","000000793");
-//        DataConvert.littleRunner("100100","700101","210","000000793");
-//        System.out.println("1-7");
-//        DataConvert.littleRunner("100600","700601","80","000000793");
-//        DataConvert.littleRunner("100600","700601","70","000000793");
-//        DataConvert.littleRunner("100600","700601","200","000000793");
-//        DataConvert.littleRunner("100600","700601","210","000000793");
-//        System.out.println("1-8");
-//        DataConvert.littleRunner("100100","700111","95","000000793");
-//        DataConvert.littleRunner("100100","700111","100","000000793");
-//        DataConvert.littleRunner("100100","700111","200","000000793");
-//        DataConvert.littleRunner("100100","700111","210","000000793");
-//        System.out.println("1-9");
-//        DataConvert.littleRunner("100600","700611","95","000000793");
-//        DataConvert.littleRunner("100600","700611","100","000000793");
-//        DataConvert.littleRunner("100600","700611","200","000000793");
-//        DataConvert.littleRunner("100600","700611","210","000000793");
+        System.out.println("1-6");
+        DataConvert.littleRunner("100100","700101","80","000000793");
+        DataConvert.littleRunner("100100","700101","70","000000793");
+        DataConvert.littleRunner("100100","700101","200","000000793");
+        DataConvert.littleRunner("100100","700101","210","000000793");
+        System.out.println("1-7");
+        DataConvert.littleRunner("100600","700601","80","000000793");
+        DataConvert.littleRunner("100600","700601","70","000000793");
+        DataConvert.littleRunner("100600","700601","200","000000793");
+        DataConvert.littleRunner("100600","700601","210","000000793");
+        System.out.println("1-8");
+        DataConvert.littleRunner("100100","700111","95","000000793");
+        DataConvert.littleRunner("100100","700111","100","000000793");
+        DataConvert.littleRunner("100100","700111","200","000000793");
+        DataConvert.littleRunner("100100","700111","210","000000793");
+        System.out.println("1-9");
+        DataConvert.littleRunner("100600","700611","95","000000793");
+        DataConvert.littleRunner("100600","700611","100","000000793");
+        DataConvert.littleRunner("100600","700611","200","000000793");
+        DataConvert.littleRunner("100600","700611","210","000000793");
 //        System.out.println("1-10");
 //        DataConvert.littleRunner("100200","700200","49","000000793");
 //        DataConvert.littleRunner("100200","700200","40","000000793");
@@ -342,8 +355,8 @@ public class Runner {
 //        multipleInputList.put(("100500"+","+"String"),"36");
 //        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500720","000000793");
 //        multipleInputList.clear();
-
-
+//
+//
 //        System.out.println("10-65");
 //        DataConvert.littleRunner("102000","501000", 2,"000000793");
 //        DataConvert.littleRunner("702101","501000", "1","000000793");
