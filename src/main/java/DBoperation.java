@@ -51,7 +51,7 @@ public class DBoperation {
             switch (elementInfo[1]){
                 case "Integar":
                     insertElementData(elementInfo[0],patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),Integer.valueOf(v));
-                    DataConvert.executeJobAndAssertResult();
+                    DataConvert.executeJobAndLogResult();
                     break;
                 case "String":
                     insertElementData(elementInfo[0],patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),v);
