@@ -14,24 +14,24 @@ public class DataConvert {
         DBoperation.deleteElementData(patientKey);
         elementValue = elementValueString;
         DBoperation.insertElementData(inputElementId,patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),elementValue);
-        executeJobAndAssertResult(patientKey,inputElementId,outputElementId);
+        executeJobAndLogResult(patientKey,inputElementId,outputElementId);
     }
 
     public static void littlerunner(String inputElementId,String outputElementId,Integer elementValueDtm,String patientKey) throws Exception{
         DBoperation.deleteElementData(patientKey);
         elementValue = elementValueDtm.toString();
         DBoperation.insertElementData(inputElementId,patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),elementValueDtm);
-        executeJobAndAssertResult(patientKey,inputElementId,outputElementId);
+        executeJobAndLogResult(patientKey,inputElementId,outputElementId);
     }
 
     public static void littlerunnerWhenMultipleInput(Map<String,String> inputElementMap, String outputElementId, String patientKey) throws Exception{
         DBoperation.deleteElementData(patientKey);
         elementValue = inputElementMap.toString();
         DBoperation.insertElementData(inputElementMap, patientKey, "HNXXXXXX" + patientKey.substring(patientKey.length() - 3, patientKey.length()));
-        executeJobAndAssertResult(patientKey,inputElementMap.toString(),outputElementId);
+        executeJobAndLogResult(patientKey,inputElementMap.toString(),outputElementId);
     }
 
-    public static void executeJobAndAssertResult(String patientKey,String inputElementId,String outputElementId) throws Exception{
+    public static void executeJobAndLogResult(String patientKey,String inputElementId,String outputElementId) throws Exception{
         Thread.sleep(100);
         DBoperation.resetJob();
         DBoperation.executeJob();
@@ -42,7 +42,7 @@ public class DataConvert {
             System.out.println("Input :"+inputElementId + " value : "+ elementValue +" and actual output is " +outputList + " and expected output is "+outputElementId+" rule validate fail");
         }
     }
-    public static void executeJobAndAssertResult() throws Exception{
+    public static void executeJobAndLogResult() throws Exception{
         Thread.sleep(100);
         DBoperation.resetJob();
         DBoperation.executeJob();

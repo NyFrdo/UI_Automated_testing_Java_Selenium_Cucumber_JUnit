@@ -1,0 +1,2 @@
+1-5
+Input :100100 value : 101 and actual output is [100100] and expected output is 700100 rule validate fail
