@@ -10,21 +10,21 @@ public class DataConvert {
 
     public static String elementValue = "";
 
-    public static void littlerunner(String inputElementId,String outputElementId,String elementValueString,String patientKey) throws Exception{
+    public static void littleRunner(String inputElementId,String outputElementId,String elementValueString,String patientKey) throws Exception{
         DBoperation.deleteElementData(patientKey);
         elementValue = elementValueString;
         DBoperation.insertElementData(inputElementId,patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),elementValue);
         executeJobAndLogResult(patientKey,inputElementId,outputElementId);
     }
 
-    public static void littlerunner(String inputElementId,String outputElementId,Integer elementValueDtm,String patientKey) throws Exception{
+    public static void littleRunner(String inputElementId,String outputElementId,Integer elementValueDtm,String patientKey) throws Exception{
         DBoperation.deleteElementData(patientKey);
         elementValue = elementValueDtm.toString();
         DBoperation.insertElementData(inputElementId,patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),elementValueDtm);
         executeJobAndLogResult(patientKey,inputElementId,outputElementId);
     }
 
-    public static void littlerunnerWhenMultipleInput(Map<String,String> inputElementMap, String outputElementId, String patientKey) throws Exception{
+    public static void littleRunnerWhenMultipleInput(Map<String,String> inputElementMap, String outputElementId, String patientKey) throws Exception{
         DBoperation.deleteElementData(patientKey);
         elementValue = inputElementMap.toString();
         DBoperation.insertElementData(inputElementMap, patientKey, "HNXXXXXX" + patientKey.substring(patientKey.length() - 3, patientKey.length()));
