@@ -32,7 +32,7 @@ public class DataConvert {
     }
 
     public static void executeJobAndLogResult(String patientKey,String inputElementId,String outputElementId) throws Exception{
-        Thread.sleep(100);
+        Thread.sleep(175);
         DBoperation.resetJob();
         DBoperation.executeJob();
         List<String> outputList =  DBoperation.returnQueryList(patientKey,"VH");

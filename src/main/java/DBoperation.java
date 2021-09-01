@@ -23,12 +23,13 @@ public class DBoperation {
 
     public static List<String> returnQueryList(String patientKey,String hospCode) throws Exception{
         List<String> list = new ArrayList<>();
-        String sql = "select element_id from clin_cc_element_data where patient_key = ? and hosp = ? order by update_dtm  ";
+        String sql = "select element_id from clin_cc_element_data where patient_key = ? and hosp = ? and data_status = 1  order by update_dtm  ";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1, patientKey);
         pst.setString(2, hospCode);
         ResultSet rs = pst.executeQuery() ;
         while(rs.next()){
+            System.out.println(rs.getString("element_id"));
             list.add(rs.getString("element_id"));
                 }
         return list;
