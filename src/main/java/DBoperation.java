@@ -29,7 +29,6 @@ public class DBoperation {
         pst.setString(2, hospCode);
         ResultSet rs = pst.executeQuery() ;
         while(rs.next()){
-            System.out.println(rs.getString("element_id"));
             list.add(rs.getString("element_id"));
                 }
         return list;
