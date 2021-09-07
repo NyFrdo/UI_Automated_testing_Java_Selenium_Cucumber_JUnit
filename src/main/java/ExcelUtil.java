@@ -1,6 +1,7 @@
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Assert;
@@ -19,11 +20,10 @@ public class ExcelUtil {
     public static Map<String,Integer> envMap = new HashMap<String,Integer>();
     public static Map<String,Integer> columnMap = new HashMap<String,Integer>();
     public static Sheet sheet ;
-//    public static String dbtype =
-//    public static String dburl =
-//    public static String dbport =
-//    public static String dbpwd =
-//    public static String dbInstance =
+
+    static {
+        readSheet (configPath);
+    }
 
     public static void fileExist (String path){
         File f = new File(path);
@@ -44,7 +44,8 @@ public class ExcelUtil {
         while (it.hasNext()){
             envMap.put(it.next().toString(),i++);
         }
-        for (int j=1;j<sheet.getLastRowNum();j++){
+
+        for (int j=1;j<=sheet.getLastRowNum();j++){
             columnMap.put(sheet.getRow(j).getCell(0).toString(),j);
         }
 //        System.out.println(envMap);
@@ -52,13 +53,14 @@ public class ExcelUtil {
     }
 
     public static String getCell (String columnName){
-        readSheet (configPath);
         int columnIndex = envMap.get(defaultEnv);
         int rowIndex = columnMap.get(columnName);
-        return sheet.getRow(rowIndex).getCell(columnIndex).toString();
+        Cell cell = sheet.getRow(rowIndex).getCell(columnIndex);
+        cell.setCellType(CellType.STRING);
+        return cell.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println(getCell("dbpwd"));
-    }
+//    public static void main(String[] args) {
+//        System.out.println(getCell("dbpwd"));
+//    }
 }
