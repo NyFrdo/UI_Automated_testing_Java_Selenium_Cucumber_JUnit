@@ -27,13 +27,16 @@ public class ExcelReader {
 
     public static void readSheet (String path) throws  IOException{
         Sheet sheet ;
-        path = "aaa";
         if (path.endsWith("xlsx")){
             sheet = new XSSFWorkbook(new FileInputStream(path)).getSheet(defaultSheet);
         }else sheet = new HSSFWorkbook(new FileInputStream(path)).getSheet(defaultSheet);
         for (int i= 0;i<sheet.getRow(0).getRowNum();i++){
 
         }
+        while(sheet.getRow(0).cellIterator().hasNext()){
+            System.out.println(sheet.getRow(0).cellIterator().next());
+        }
+
     }
 
     public static void readCell (String path){
