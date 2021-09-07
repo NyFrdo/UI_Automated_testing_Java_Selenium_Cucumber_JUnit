@@ -4,17 +4,19 @@ import java.util.List;
 import java.util.Map;
 
 public class DBoperation {
-    public static final String URL = "jdbc:sqlserver://192.168.101.220:62658;databasename=cmdctr_db";
-    public static final String USER = "sa";
-    public static final String PASSWORD = "P@ssw0rd";
+    public static String URL = "jdbc:"+ExcelUtil.getCell("dbtype")+"://"
+            +ExcelUtil.getCell("dburl")+
+            ":"+ExcelUtil.getCell("dbport")+";databasename="+ExcelUtil.getCell("dbInstance")+"";
+    public static String USER = ExcelUtil.getCell("dbuser");
+    public static String PASSWORD = ExcelUtil.getCell("dbpwd");
+    public static String DRIVER = ExcelUtil.getCell("dbdriver");
     public static Connection conn;
+
     public static void connect() {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            Class.forName(DRIVER);
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Connect succeed");
-
-
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("Connect fail");
@@ -30,7 +32,7 @@ public class DBoperation {
         ResultSet rs = pst.executeQuery() ;
         while(rs.next()){
             list.add(rs.getString("element_id"));
-                }
+        }
         return list;
     }
 
@@ -91,7 +93,7 @@ public class DBoperation {
         return  pst.executeUpdate();
     }
 
-     public static void resetJob() throws Exception{
+    public static void resetJob() throws Exception{
         List<String> list = new ArrayList<>();
         String sql = "TRUNCATE TABLE clin_cc_process_control;" +
                 " INSERT INTO [dbo].[clin_cc_process_control]([job_name], [job_sequence], [data_from_dtm], [data_to_dtm], [data_commit_dtm], [job_last_success_dtm], [job_processing_dtm], [job_status], " +
