@@ -1,13 +1,5 @@
-import org.apache.commons.lang.StringUtils;
-import org.junit.Assert;
-import sun.security.mscapi.PRNG;
-
-import java.io.*;
-import java.nio.file.Files;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import cucumber.api.CucumberOptions;
+import org.junit.runner.RunWith;
 
 @CucumberOptions(
         features = {
@@ -21,5 +13,5 @@ import java.util.Map;
 )
 
 @RunWith(CustomizedCucumber.class)
-public class Login {
+public class WebRunner {
 }
