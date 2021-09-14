@@ -142,6 +142,13 @@ public class Runner {
         multipleInputList.clear();
         System.out.println("10-5");
         DataConvert.littleRunner("100000","500000","6","000000793");
+        System.out.println("10-20");//700500 700510 700313 700314
+        multipleInputList.put(("100500"+","+"String"),"35");
+        multipleInputList.put(("100700"+","+"String"),"15");
+        multipleInputList.clear();
+        multipleInputList.put(("100500"+","+"String"),"39");//700510
+        multipleInputList.put(("100700"+","+"String"),"15");
+        multipleInputList.clear();
         System.out.println("10-35");
         DataConvert.littleRunner("102800","500600",-2,"000000793");
         System.out.println("10-40");
@@ -149,8 +156,8 @@ public class Runner {
     }
 
     public static void positiveRunner() throws  Exception{
-//        System.out.println("1-5");
-//        DataConvert.littleRunner("100100","700100","100","000000793");
+        System.out.println("1-5");
+        DataConvert.littleRunner("100100","700100","100","000000793");
 //        DataConvert.littleRunner("100100","700100","99","000000793");
 //        System.out.println("1-6");
 //        DataConvert.littleRunner("100100","700101","80","000000793");
@@ -262,14 +269,14 @@ public class Runner {
 //        DataConvert.littleRunner("100300","702900","40","000000793");
 //        System.out.println("1-70");
 //        DataConvert.littleRunner("102700","702700","4","000000793");
-        System.out.println("1-75 77");
-        DataConvert.littleRunner("102000","702000", 2,"000000793");
-        DataConvert.littleRunner("102000","702000",1,"000000793");
-        DataConvert.littleRunner("102000","702001",1,"000000793");
-        System.out.println("1-78 80");
-        DataConvert.littleRunner("102100","702100", 2,"000000793");
-        DataConvert.littleRunner("102100","702100", 1,"000000793");
-        DataConvert.littleRunner("102100","702101",1,"000000793");
+//        System.out.println("1-75 77");
+//        DataConvert.littleRunner("102000","702000", 2,"000000793");
+//        DataConvert.littleRunner("102000","702000",1,"000000793");
+//        DataConvert.littleRunner("102000","702001",1,"000000793");
+//        System.out.println("1-78 80");
+//        DataConvert.littleRunner("102100","702100", 2,"000000793");
+//        DataConvert.littleRunner("102100","702100", 1,"000000793");
+//        DataConvert.littleRunner("102100","702101",1,"000000793");
 //        System.out.println("1-90");
 //        DataConvert.littleRunner("101010","701010", "6","000000793");
 //        DataConvert.littleRunner("101010","701010","10","000000793");
@@ -288,19 +295,19 @@ public class Runner {
 //        DataConvert.littleRunner("100300","500710","90","000000793");//MID 700310
 //        DataConvert.littleRunner("101031","500710","1","000000793");
 //        System.out.println("3-10");
-//        DataConvert.littleRunner("100700","700311","3","000000793");//MID 700701
-//        DataConvert.littleRunner("100700","700311","15","000000793");//MID 700702
-//        DataConvert.littleRunner("101702","700311","24","000000793");//MID 701702
-//        DataConvert.littleRunner("101737","700311","1","000000793");//MID 701737
+//        DataConvert.littleRunner("100700","700314","3","000000793");//MID 700701
+//        DataConvert.littleRunner("100700","700314","15","000000793");//MID 700702
+//        DataConvert.littleRunner("101702","700314","24","000000793");//MID 701702
+//        DataConvert.littleRunner("101737","700314","1","000000793");//MID 701737
 //        System.out.println("3-20");
 //        DataConvert.littleRunner("100600","700312","100","000000793");//MID 700600
 //        DataConvert.littleRunner("100100","700312","80","000000793");//MID 700100
-        System.out.println("5-5");
-
-        multipleInputList.put(("102800"+","+"Integar"),"2");
-        multipleInputList.put(("100500"+","+"String"),"36");
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500720","000000793");//MID 700521 SEC MID 500710
-        multipleInputList.clear();
+//        System.out.println("5-5");
+//
+//        multipleInputList.put(("102800"+","+"Integar"),"2");
+//        multipleInputList.put(("100500"+","+"String"),"36");
+//        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500720","000000793");//MID 700521 SEC MID 500710
+//        multipleInputList.clear();
 //        System.out.println("5-20");
 //        multipleInputList.put(("100400"+","+"String"),"22");
 //        multipleInputList.put(("100005"+","+"String"),"13");
@@ -345,42 +352,25 @@ public class Runner {
 //        DataConvert.littleRunner("100600","500200","100","000000793");//MID 700600
 //        DataConvert.littleRunner("100200","500200","40","000000793");//MID 700200
 //        DataConvert.littleRunner("100300","500200","89","000000793");//MID 700300
-        System.out.println("10-20");
-        multipleInputList.put(("100500"+","+"String"),"35");//700500
-        multipleInputList.put(("100700"+","+"String"),"15");//700311
-
-        multipleInputList.put(("100400"+","+"String"),"22");//700313
-        multipleInputList.put(("100600"+","+"String"),"100");
-
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500300","000000793");
-        multipleInputList.clear();
-
-        multipleInputList.put(("100500"+","+"String"),"35");
-        multipleInputList.put(("100301"+","+"String"),"90");
-
-        multipleInputList.put(("100400"+","+"String"),"22");
-        multipleInputList.put(("100600"+","+"String"),"100");
-
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500300","000000793");
-        multipleInputList.clear();
-
-        multipleInputList.put(("100500"+","+"String"),"35");
-        multipleInputList.put(("101702"+","+"String"),"24");
-
-        multipleInputList.put(("100400"+","+"String"),"22");
-        multipleInputList.put(("100600"+","+"String"),"100");
-
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500300","000000793");
-        multipleInputList.clear();
-
-        multipleInputList.put(("100500"+","+"String"),"35");
-        multipleInputList.put(("101737"+","+"String"),"1");
-
-        multipleInputList.put(("100400"+","+"String"),"22");
-        multipleInputList.put(("100005"+","+"String"),"13");
-
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500300","000000793");
-        multipleInputList.clear();
+//        System.out.println("10-20");//700500 700510 700313 700314
+//        multipleInputList.put(("100500"+","+"String"),"35");//700500
+//        multipleInputList.put(("100700"+","+"String"),"15");//700311 700314
+//
+//        multipleInputList.put(("100400"+","+"String"),"22");
+//        multipleInputList.put(("100600"+","+"String"),"100");//700313
+//
+//        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500300","000000793");
+//        multipleInputList.clear();
+//
+//        multipleInputList.put(("100500"+","+"String"),"39");//700510
+//        multipleInputList.put(("100700"+","+"String"),"15");
+//
+//        multipleInputList.put(("100400"+","+"String"),"22");//700313
+//        multipleInputList.put(("100600"+","+"String"),"100");
+//
+//        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500300","000000793");
+//        multipleInputList.clear();
+//
 //
 //        System.out.println("10-25");
 //        DataConvert.littleRunner("100702","500400","1","000000793");
@@ -422,14 +412,14 @@ public class Runner {
 //        DataConvert.littleRunner("101700","500500","1","000000793");
 //        DataConvert.littleRunner("101800","500500","1","000000793");
 //        DataConvert.littleRunner("101900","500500","1","000000793");
-
-        System.out.println("10-35");
-        DataConvert.littleRunner("102800","500600",-1,"000000793");
-        DataConvert.littleRunner("102800","500600",0,"000000793");
-
-        System.out.println("10-40");
-        DataConvert.littleRunner("102800","500620",-2,"000000793");
-        DataConvert.littleRunner("102800","500620",0,"000000793");
+//
+//        System.out.println("10-35");
+//        DataConvert.littleRunner("102800","500600",-1,"000000793");
+//        DataConvert.littleRunner("102800","500600",0,"000000793");
+//
+//        System.out.println("10-40");
+//        DataConvert.littleRunner("102800","500620",-2,"000000793");
+//        DataConvert.littleRunner("102800","500620",0,"000000793");
 //
 //        System.out.println("10-50");
 //        DataConvert.littleRunner("102200","500800","1","000000793");
@@ -437,22 +427,23 @@ public class Runner {
 //        DataConvert.littleRunner("102400","500800","1","000000793");
 //        DataConvert.littleRunner("102500","500800","1","000000793");
 //
-        System.out.println("10-60");
-        DataConvert.littleRunner("102800","500700",-1,"000000793");
-
-        multipleInputList.put(("102800"+","+"Integar"),"2");
-        multipleInputList.put(("100500"+","+"String"),"36");
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500700","000000793");//MID 700521 SEC MID 500710
-        multipleInputList.clear();
-
-
-        System.out.println("10-65");
-//        DataConvert.littleRunner("100300","501000","10","000000793");//702001
-        DataConvert.littleRunner("102100","702101",1,"000000793");//702101
-
-        multipleInputList.put(("102100"+","+"Integar"),"1");
-        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"501000","000000793");
-        multipleInputList.clear();
+//        System.out.println("10-60");
+//        DataConvert.littleRunner("102800","500700",-1,"000000793");
+//
+//        multipleInputList.put(("102800"+","+"Integar"),"2");
+//        multipleInputList.put(("100500"+","+"String"),"36");
+//        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500700","000000793");//MID 700521 SEC MID 500710
+//        multipleInputList.clear();
+//
+//
+//        System.out.println("10-65");
+//        DataConvert.littleRunner("102000","501000",1,"000000793");//702001
+//        DataConvert.littleRunner("102100","501000",1,"000000793");//702101
+//
+//        multipleInputList.put(("102100"+","+"Integar"),"1");
+//        multipleInputList.put(("102000"+","+"Integar"),"1");
+//        DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"501000","000000793");
+//        multipleInputList.clear();
     }
 
 
