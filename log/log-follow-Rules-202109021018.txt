@@ -1,3 +1,0 @@
-1-18
-Input :100301 value : 90 and actual output is [100301, 500710] and expected output is 700311 rule validate fail
-Input :100301 value : 80 and actual output is [100301, 500710, 500100, 700301] and expected output is 700311 rule validate fail

@@ -1,8 +1,0 @@
-1-5
-2021-09-08 17:31:30.11
-When input 100100 with value 100 should generate output 700100 , rule validate succeed
-1-18
-2021-09-08 17:31:30.11
-Input :100301 value : 90 and actual output is [100301, 500710] and expected output is 700311 rule validate fail
-2021-09-08 17:31:30.11
-Input :100301 value : 80 and actual output is [100301, 500710, 500100, 700301] and expected output is 700311 rule validate fail

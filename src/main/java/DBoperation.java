@@ -93,8 +93,8 @@ public class DBoperation {
 
     public static Integer insertElementData(String elementId, String patientKey, String caseNo , Integer elementValueDtm) throws Exception{
         String sql = " insert into clin_cc_element_data (element_id,element_type,hosp,patient_key,case_no,adm_dtm,day_id,ref_data_dtm,data_status,record_key_1,record_key_2," +
-                "update_dtm,element_value_dec,display_dtm,element_value_dt) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','2021-06-29 00:00:00.000','1','',''," +
-                "'"+ LocalDateTime.parse(getAdmissionTime(patientKey), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS")).plusDays(1) +"','1','',dateadd(DAY, ?, CONVERT(date,GETDATE()))) ";
+                "update_dtm,element_value_dec,display_dtm,element_value_dt) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','"+ LocalDateTime.parse(getAdmissionTime(patientKey), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS")).plusDays(1) +"','1','',''," +
+                "'2021-06-29 00:00:00.000','1','',dateadd(DAY, ?, CONVERT(date,GETDATE()))) ";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1,elementId);
         pst.setString(2,patientKey);
@@ -105,10 +105,11 @@ public class DBoperation {
 
      public static void resetJob() throws Exception{
         String sql = "TRUNCATE TABLE clin_cc_process_control;" +
-                " INSERT INTO [dbo].[clin_cc_process_control]([job_name], [job_sequence], [data_from_dtm], [data_to_dtm], [data_commit_dtm], [job_last_success_dtm], [job_processing_dtm], [job_status], " +
-                " [job_fail_count],  [job_interval_min]) VALUES " +
-                " ('job1', 1, '2021-05-01 17:56:44.000', '2021-07-28 18:06:44.000', '2021-07-28 17:56:44.000', '2021-08-02 17:42:10.983',  '2021-08-02 17:42:10.967', '1', " +
-                " 0,10);";
+                " INSERT INTO [dbo].[clin_cc_process_control]([job_name], [job_sequence], [data_from_dtm], [data_to_dtm], [data_commit_dtm], [job_last_success_dtm], [job_processing_dtm], " +
+                "[job_status], [job_fail_count], [job_max_fail_count],[job_interval_min]) VALUES " +
+                " ('job1', 1, '2021-05-01 17:56:44.000', '2021-07-28 18:06:44.000', '2021-07-28 17:56:44.000', '2021-08-02 17:42:10.983',  '2021-08-02 17:42:10.967', " +
+                "'1',0,10,10);";
+         System.out.println(sql);
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.execute();
     }
