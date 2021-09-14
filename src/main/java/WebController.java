@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class WebController {
     public static WebDriver driver;
     static {
@@ -44,5 +46,13 @@ public class WebController {
         waitUntilElementAbleToPerformAction(by);
         e = driver.findElement(by);
         e.click();
+    }
+
+    public static void wait(int i){
+        try {
+            TimeUnit.SECONDS.sleep(i);
+        } catch (InterruptedException interruptedException) {
+            interruptedException.printStackTrace();
+        }
     }
 }

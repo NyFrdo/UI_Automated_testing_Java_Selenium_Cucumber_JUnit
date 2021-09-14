@@ -1,4 +1,5 @@
 import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
@@ -7,11 +8,11 @@ import org.junit.runner.RunWith;
         },
 
         glue={"hk.org.java" },
-        plugin = { "hk.org.ha.qa.cucumber.formatter.TestFormatter" },
         monochrome = true,
         strict=true
 )
 
-@RunWith(CustomizedCucumber.class)
-public class WebRunner {
+@RunWith(Cucumber.class)
+public class webRunner {
+
 }
