@@ -1,6 +1,4 @@
-import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
-import sun.security.mscapi.PRNG;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -9,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Runner {
+public class apiRunner {
     public static Map<String,String> multipleInputList = new LinkedHashMap<>();
 
     public static void main(String[] args) throws Exception{
