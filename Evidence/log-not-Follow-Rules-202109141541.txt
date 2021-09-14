@@ -19,7 +19,7 @@ Input :100201 value : 50 and actual output is [100201] and expected output is 70
 1-15
 Input :100300 value : 90 and actual output is [100300, 500710, 700310] and expected output is 700300 rule validate fail
 1-16
-Input :100301 value : 90 and actual output is [100301, 700311, 500710] and expected output is 700301 rule validate fail
+Input :100301 value : 90 and actual output is [100301, 500710, 700311] and expected output is 700301 rule validate fail
 1-17
 Input :100300 value : 91 and actual output is [100300] and expected output is 700310 rule validate fail
 1-18
@@ -63,7 +63,7 @@ Input :100300 value : 100 and actual output is [100300] and expected output is 7
 1-70
 Input :102700 value : 10 and actual output is [102700] and expected output is 702700 rule validate fail
 1-75
-Input :102000 value : 3 and actual output is [102000, 702001] and expected output is 702000 rule validate fail
+Input :102000 value : 3 and actual output is [102000, 702001, 501000] and expected output is 702000 rule validate fail
 1-77 78
 Input :100300 value : 10 and actual output is [100300, 500710, 500100, 500200, 700300, 700310, 702900] and expected output is 702001 rule validate fail
 Input :100300 value : 10 and actual output is [100300, 500710, 500100, 500200, 700300, 700310, 702900] and expected output is 702101 rule validate fail
@@ -74,14 +74,15 @@ Input :101010 value : 5 and actual output is [101010] and expected output is 701
 1-100
 Input :100005 value : 15 and actual output is [100005] and expected output is 700005 rule validate fail
 5-5
-Input :{102800,Integar=2} value : {102800,Integar=2} and actual output is [102800, 500600, 500620, 500700, 500700, 500600, 500620] and expected output is 500720 rule validate fail
+Input :{102800,Integar=2} value : {102800,Integar=2} and actual output is [102800, 500700, 500600, 500620] and expected output is 500720 rule validate fail
 5-20
 Input :{100400,String=22} value : {100400,String=22} and actual output is [100400, 500710, 500100, 700410, 700411, 700421] and expected output is 500720 rule validate fail
 Input :{100500,String=13} value : {100500,String=13} and actual output is [100500, 500710, 500100, 500200, 700500, 700501, 700521] and expected output is 500720 rule validate fail
 Input :{100600,String=101} value : {100600,String=101} and actual output is [100600] and expected output is 500720 rule validate fail
 10-5
 Input :100000 value : 6 and actual output is [100000] and expected output is 500000 rule validate fail
+10-20
 10-35
-When input 102800 with value -2 should generate output 500620 , rule validate succeed
+Input :102800 value : -2 and actual output is [102800, 500620] and expected output is 500600 rule validate fail
 10-40
 Input :102800 value : -3 and actual output is [102800] and expected output is 500620 rule validate fail

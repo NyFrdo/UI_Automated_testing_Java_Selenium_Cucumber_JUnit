@@ -11,9 +11,9 @@ public class DataConvert {
     public static String elementValue = "";
 
     public static void littleRunner(String inputElementId,String outputElementId,String elementValueString,String patientKey) throws Exception{
-        DBoperation.deleteElementData(patientKey);
-        elementValue = elementValueString;
-        DBoperation.insertElementData(inputElementId,patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),elementValue);
+//        DBoperation.deleteElementData(patientKey);
+//        elementValue = elementValueString;
+//        DBoperation.insertElementData(inputElementId,patientKey,"HNXXXXXX"+patientKey.substring(patientKey.length()-3,patientKey.length()),elementValue);
         executeJobAndLogResult(patientKey,inputElementId,outputElementId);
     }
 
