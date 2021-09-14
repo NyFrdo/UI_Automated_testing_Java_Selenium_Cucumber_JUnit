@@ -156,8 +156,8 @@ public class Runner {
     }
 
     public static void positiveRunner() throws  Exception{
-        System.out.println("1-5");
-        DataConvert.littleRunner("100100","700100","100","000000793");
+//        System.out.println("1-5");
+//        DataConvert.littleRunner("100100","700100","100","000000793");
 //        DataConvert.littleRunner("100100","700100","99","000000793");
 //        System.out.println("1-6");
 //        DataConvert.littleRunner("100100","700101","80","000000793");
