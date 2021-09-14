@@ -1,4 +1,6 @@
 import java.sql.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,11 +37,22 @@ public class DBoperation {
     }
 
     public static Integer deleteElementData(String patientKey) throws Exception{
-        List<String> list = new ArrayList<>();
         String sql = " delete from clin_cc_element_data where patient_key = ? ";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1,patientKey);
         return  pst.executeUpdate();
+    }
+
+    public static String getAdmissionTime(String patientKey) throws Exception{
+        List<String> list = new ArrayList<>();
+        String sql = "select adm_dtm from cc_ward_detail_view where patient_key = ? ";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1,patientKey);
+        ResultSet rs = pst.executeQuery() ;
+        while(rs.next()){
+            list.add(rs.getString("adm_dtm"));
+        }
+        return  list.get(0);
     }
 
     public static void insertElementData(Map<String,String> inputElementMap, String patientKey, String caseNo ) throws Exception{
@@ -64,9 +77,9 @@ public class DBoperation {
     }
 
     public static Integer insertElementData(String elementId,String patientKey,String caseNo ,String elementValue) throws Exception{
-        List<String> list = new ArrayList<>();
         String sql = " insert into clin_cc_element_data (element_id,element_type,hosp,patient_key,case_no,adm_dtm,day_id,ref_data_dtm,data_status,record_key_1,record_key_2," +
-                "update_dtm,element_value_dec,display_dtm) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','2021-06-29 00:00:00.000','1','',''," +
+                "update_dtm,element_value_dec,display_dtm) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','"
+                +LocalDateTime.parse(getAdmissionTime(patientKey), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS")).plusDays(1)+"','1','',''," +
                 "'2021-06-29 00:00:00.000',?,'') ";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1,elementId);
@@ -79,10 +92,9 @@ public class DBoperation {
 
 
     public static Integer insertElementData(String elementId, String patientKey, String caseNo , Integer elementValueDtm) throws Exception{
-        List<String> list = new ArrayList<>();
         String sql = " insert into clin_cc_element_data (element_id,element_type,hosp,patient_key,case_no,adm_dtm,day_id,ref_data_dtm,data_status,record_key_1,record_key_2," +
                 "update_dtm,element_value_dec,display_dtm,element_value_dt) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','2021-06-29 00:00:00.000','1','',''," +
-                "'2021-06-29 00:00:00.000','1','',dateadd(DAY, ?, CONVERT(date,GETDATE()))) ";
+                "'"+ LocalDateTime.parse(getAdmissionTime(patientKey), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS")).plusDays(1) +"','1','',dateadd(DAY, ?, CONVERT(date,GETDATE()))) ";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1,elementId);
         pst.setString(2,patientKey);
@@ -92,7 +104,6 @@ public class DBoperation {
     }
 
      public static void resetJob() throws Exception{
-        List<String> list = new ArrayList<>();
         String sql = "TRUNCATE TABLE clin_cc_process_control;" +
                 " INSERT INTO [dbo].[clin_cc_process_control]([job_name], [job_sequence], [data_from_dtm], [data_to_dtm], [data_commit_dtm], [job_last_success_dtm], [job_processing_dtm], [job_status], " +
                 " [job_fail_count],  [job_interval_min]) VALUES " +
@@ -103,7 +114,6 @@ public class DBoperation {
     }
 
     public static void executeJob() throws Exception{
-        List<String> list = new ArrayList<>();
         String sql = "exec dbo.clin_cc_calculation_element_data 'VH','job1',1";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.execute();
