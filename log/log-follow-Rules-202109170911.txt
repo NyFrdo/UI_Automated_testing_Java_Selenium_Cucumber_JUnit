@@ -1,0 +1,116 @@
+1-5
+When input 100100 with value 100 should generate output 700100 , rule validate succeed
+When input 100100 with value 99 should generate output 700100 , rule validate succeed
+1-6
+When input 100100 with value 80 should generate output 700101 , rule validate succeed
+When input 100100 with value 70 should generate output 700101 , rule validate succeed
+When input 100100 with value 200 should generate output 700101 , rule validate succeed
+When input 100100 with value 210 should generate output 700101 , rule validate succeed
+1-7
+When input 100600 with value 80 should generate output 700601 , rule validate succeed
+When input 100600 with value 70 should generate output 700601 , rule validate succeed
+When input 100600 with value 200 should generate output 700601 , rule validate succeed
+When input 100600 with value 210 should generate output 700601 , rule validate succeed
+1-8
+When input 100100 with value 95 should generate output 700111 , rule validate succeed
+When input 100100 with value 100 should generate output 700111 , rule validate succeed
+When input 100100 with value 200 should generate output 700111 , rule validate succeed
+When input 100100 with value 210 should generate output 700111 , rule validate succeed
+1-9
+When input 100600 with value 95 should generate output 700611 , rule validate succeed
+When input 100600 with value 100 should generate output 700611 , rule validate succeed
+When input 100600 with value 200 should generate output 700611 , rule validate succeed
+When input 100600 with value 210 should generate output 700611 , rule validate succeed
+1-10
+When input 100200 with value 49 should generate output 700200 , rule validate succeed
+When input 100200 with value 40 should generate output 700200 , rule validate succeed
+1-11
+When input 100201 with value 49 should generate output 700201 , rule validate succeed
+When input 100201 with value 40 should generate output 700201 , rule validate succeed
+1-12
+When input 100200 with value 40 should generate output 700202 , rule validate succeed
+When input 100200 with value 35 should generate output 700202 , rule validate succeed
+When input 100200 with value 40 should generate output 700222 , rule validate succeed
+When input 100200 with value 35 should generate output 700222 , rule validate succeed
+When input 100200 with value 111 should generate output 700222 , rule validate succeed
+When input 100200 with value 120 should generate output 700222 , rule validate succeed
+1-13
+When input 100201 with value 40 should generate output 700203 , rule validate succeed
+When input 100201 with value 35 should generate output 700203 , rule validate succeed
+When input 100201 with value 40 should generate output 700223 , rule validate succeed
+When input 100201 with value 35 should generate output 700223 , rule validate succeed
+When input 100201 with value 111 should generate output 700223 , rule validate succeed
+When input 100201 with value 120 should generate output 700223 , rule validate succeed
+1-15
+When input 100300 with value 89 should generate output 700300 , rule validate succeed
+When input 100300 with value 80 should generate output 700300 , rule validate succeed
+1-16
+When input 100301 with value 89 should generate output 700301 , rule validate succeed
+When input 100301 with value 80 should generate output 700301 , rule validate succeed
+1-17
+When input 100300 with value 90 should generate output 700310 , rule validate succeed
+When input 100300 with value 80 should generate output 700310 , rule validate succeed
+1-18
+When input 100301 with value 90 should generate output 700311 , rule validate succeed
+When input 100301 with value 80 should generate output 700311 , rule validate succeed
+1-20
+When input 100400 with value 8 should generate output 700400 , rule validate succeed
+1-21
+When input 100400 with value 8 should generate output 700401 , rule validate succeed
+When input 100400 with value 5 should generate output 700401 , rule validate succeed
+1-25
+When input 100500 with value 35.0 should generate output 700500 , rule validate succeed
+1-26
+When input 100500 with value 35 should generate output 700501 , rule validate succeed
+When input 100500 with value 34.0 should generate output 700501 , rule validate succeed
+When input 100500 with value 38.6 should generate output 700501 , rule validate succeed
+When input 100500 with value 39 should generate output 700501 , rule validate succeed
+1-30
+When input 100600 with value 100 should generate output 700600 , rule validate succeed
+When input 100600 with value 99 should generate output 700600 , rule validate succeed
+1-31
+When input 100500 with value 36 should generate output 700521 , rule validate succeed
+When input 100500 with value 35.5 should generate output 700521 , rule validate succeed
+When input 100500 with value 39.1 should generate output 700521 , rule validate succeed
+When input 100500 with value 40.0 should generate output 700521 , rule validate succeed
+1-32
+When input 100501 with value 36 should generate output 700522 , rule validate succeed
+When input 100501 with value 35.5 should generate output 700522 , rule validate succeed
+When input 100501 with value 39.1 should generate output 700522 , rule validate succeed
+When input 100501 with value 40.0 should generate output 700522 , rule validate succeed
+1-36 37
+When input 100700 with value 3 should generate output 700701 , rule validate succeed
+When input 100700 with value 15 should generate output 700702 , rule validate succeed
+1-38
+When input 101737 with value 1 should generate output 701737 , rule validate succeed
+1-39
+When input 101702 with value 24 should generate output 701702 , rule validate succeed
+1-40
+When input 100200 with value 101 should generate output 700210 , rule validate succeed
+When input 100200 with value 110 should generate output 700210 , rule validate succeed
+1-41
+When input 100201 with value 101 should generate output 700211 , rule validate succeed
+When input 100201 with value 110 should generate output 700211 , rule validate succeed
+1-42
+When input 100200 with value 111 should generate output 700212 , rule validate succeed
+When input 100200 with value 115 should generate output 700212 , rule validate succeed
+1-43
+When input 100201 with value 111 should generate output 700213 , rule validate succeed
+When input 100201 with value 115 should generate output 700213 , rule validate succeed
+1-45 46
+When input 100400 with value 22 should generate output 700410 , rule validate succeed
+When input 100400 with value 21 should generate output 700411 , rule validate succeed
+1-47
+When input 100400 with value 15 should generate output 700421 , rule validate succeed
+When input 100400 with value 18 should generate output 700421 , rule validate succeed
+1-60
+When input 100500 with value 38.5 should generate output 700510 , rule validate succeed
+1-65
+When input 100300 with value 40 should generate output 702900 , rule validate succeed
+1-70
+When input 102700 with value 4 should generate output 702700 , rule validate succeed
+1-75 77
+When input 102000 with value 2 should generate output 702000 , rule validate succeed
+When input 102000 with value 1 should generate output 702000 , rule validate succeed
+When input 102000 with value 1 should generate output 702001 , rule validate succeed
+1-78 80

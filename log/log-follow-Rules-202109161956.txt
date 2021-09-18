@@ -1,0 +1,2 @@
+1-5
+TRUNCATE TABLE clin_cc_process_control; INSERT INTO [dbo].[clin_cc_process_control]([job_name], [job_sequence], [data_from_dtm], [data_to_dtm], [data_commit_dtm], [job_last_success_dtm], [job_processing_dtm], [job_status], [job_fail_count], [job_max_fail_count],[job_interval_min]) VALUES  ('job1', 1, '2021-05-01 17:56:44.000', '2021-07-28 18:06:44.000', '2021-07-28 17:56:44.000', '2021-08-02 17:42:10.983',  '2021-08-02 17:42:10.967', '1',0,10,10);
