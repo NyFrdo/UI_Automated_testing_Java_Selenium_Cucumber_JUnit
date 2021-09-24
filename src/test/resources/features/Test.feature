@@ -1,7 +1,7 @@
 Feature:
   Scenario Outline: Test
     Given Login and check
-#    And upload avator
+    And upload avator
 
     Examples:
     ||
