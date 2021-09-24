@@ -14,7 +14,7 @@ public class Runner {
 
     public static void main(String[] args) throws Exception{
         fireRunner(true);
-//        fireRunner(false);
+        fireRunner(false);
     }
 
     public static void fireRunner(Boolean flag) throws  Exception{
@@ -66,8 +66,11 @@ public class Runner {
         DataConvert.littleRunner("100201","700201","50","000000793");
         System.out.println("1-12");
         DataConvert.littleRunner("100200","700202","50","000000793");
+        DataConvert.littleRunner("100200","700222","55","000000793");
         System.out.println("1-13");
         DataConvert.littleRunner("100201","700203","50","000000793");
+        System.out.println("1-14");
+        DataConvert.littleRunner("100201","700223","55","000000793");
         System.out.println("1-15");
         DataConvert.littleRunner("100300","700300","90","000000793");
         System.out.println("1-16");
@@ -86,7 +89,7 @@ public class Runner {
         DataConvert.littleRunner("100600","700600","101","000000793");
         System.out.println("1-31");
         DataConvert.littleRunner("100500","700521","37","000000793");
-        System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥39.1 )
+        System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥38.1 )
         DataConvert.littleRunner("100501","700522","37","000000793");
         System.out.println("1-36 37");
         DataConvert.littleRunner("100700","700701","4","000000793");
@@ -190,17 +193,17 @@ public class Runner {
         DataConvert.littleRunner("100200","700202","40","000000793");
         DataConvert.littleRunner("100200","700202","35","000000793");
 
-        DataConvert.littleRunner("100200","700222","40","000000793");
+        DataConvert.littleRunner("100200","700222","45","000000793");
         DataConvert.littleRunner("100200","700222","35","000000793");
-        DataConvert.littleRunner("100200","700222","111","000000793");
+        DataConvert.littleRunner("100200","700222","101","000000793");
         DataConvert.littleRunner("100200","700222","120","000000793");
         System.out.println("1-13");
         DataConvert.littleRunner("100201","700203","40","000000793");
         DataConvert.littleRunner("100201","700203","35","000000793");
 
-        DataConvert.littleRunner("100201","700223","40","000000793");
+        DataConvert.littleRunner("100201","700223","45","000000793");
         DataConvert.littleRunner("100201","700223","35","000000793");
-        DataConvert.littleRunner("100201","700223","111","000000793");
+        DataConvert.littleRunner("100201","700223","101","000000793");
         DataConvert.littleRunner("100201","700223","120","000000793");
         System.out.println("1-15");
         DataConvert.littleRunner("100300","700300","89","000000793");
@@ -232,12 +235,12 @@ public class Runner {
         System.out.println("1-31");
         DataConvert.littleRunner("100500","700521","36","000000793");
         DataConvert.littleRunner("100500","700521","35.5","000000793");
-        DataConvert.littleRunner("100500","700521","39.1","000000793");
+        DataConvert.littleRunner("100500","700521","38.1","000000793");
         DataConvert.littleRunner("100500","700521","40.0","000000793");
         System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥38.1 )
         DataConvert.littleRunner("100501","700522","36","000000793");
         DataConvert.littleRunner("100501","700522","35.5","000000793");
-        DataConvert.littleRunner("100501","700522","39.1","000000793");
+        DataConvert.littleRunner("100501","700522","38.1","000000793");
         DataConvert.littleRunner("100501","700522","40.0","000000793");
         System.out.println("1-36 37");
         DataConvert.littleRunner("100700","700701","3","000000793");
