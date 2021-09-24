@@ -1,3 +1,5 @@
+package runner;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
@@ -7,7 +9,7 @@ import org.junit.runner.RunWith;
                 "src/test/resources/features/test.feature",
         },
 
-        glue={"hk.org.java" },
+//        glue={"util" },
         monochrome = true,
         strict=true
 )
