@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
                 "src/test/resources/features/test.feature",
         },
 
-//        glue={"util" },
+        glue={"stepDefinition" },
         monochrome = true,
         strict=true
 )
