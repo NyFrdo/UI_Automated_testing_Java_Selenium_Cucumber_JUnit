@@ -1,24 +1,25 @@
+package controller;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.PropertiesUtil;
 
 import java.util.concurrent.TimeUnit;
 
 public class WebController {
     public static WebDriver driver;
     static {
-        System.setProperty("webdriver.chrome.driver",PropertiesUtil.getKey("driverPath"));
+        System.setProperty("webdriver.chrome.driver", PropertiesUtil.getKey("driverPath"));
         driver = new ChromeDriver();
     }
     public static WebDriverWait wait = new WebDriverWait(driver,PropertiesUtil.getLongKey("waitSeconds"));
     public static WebElement e ;
 
-    public static void login(){
-        driver.get(PropertiesUtil.getKey("testSite"));
-    }
+
 
     public static void waitUntilElementAbleToPerformAction(String xpath){
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
@@ -41,12 +42,7 @@ public class WebController {
             e.printStackTrace();
         }
     }
-    
-    public static void clickElement(By by){
-        waitUntilElementAbleToPerformAction(by);
-        e = driver.findElement(by);
-        e.click();
-    }
+
 
     public static void wait(int i){
         try {
