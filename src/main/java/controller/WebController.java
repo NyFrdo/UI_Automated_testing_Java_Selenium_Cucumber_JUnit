@@ -33,7 +33,7 @@ public class WebController {
     }
 
     public static void waitUntilElementAbleToPerformAction(By by){
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+//        wait.until(ExpectedConditions.presenceOfElementLocated(by));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         wait.until(ExpectedConditions.elementToBeClickable(by));
         try {
