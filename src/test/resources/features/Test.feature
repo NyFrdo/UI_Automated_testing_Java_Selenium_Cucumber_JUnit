@@ -1,6 +1,6 @@
-Feature:
+Feature:test
   Scenario Outline: Test
-    Given Login and check
+    Given Login
     And upload avator
 
     Examples:
