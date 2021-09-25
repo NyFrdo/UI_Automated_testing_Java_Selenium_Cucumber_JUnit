@@ -12,7 +12,6 @@ public class StepDefinition {
     public void login() throws Throwable{
         operationStep.login();
 //        operationStep.wait(5);
-        operationStep.closeAlert();
         operationStep.clickElement(WebElementDefinition.loginButton);
         operationStep.clickElement(WebElementDefinition.loginByAcccountAndPwdTab);
         operationStep.clickElement(WebElementDefinition.userAccountInput);
