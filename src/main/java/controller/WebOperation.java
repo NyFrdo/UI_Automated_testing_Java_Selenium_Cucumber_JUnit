@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import util.BrowserPerference;
 import util.PropertiesUtil;
 
 
 public class WebOperation extends  WebController{
     public static Actions action = new Actions(driver);
-
+    public static BrowserPerference pref = new BrowserPerference();
 
     public void login(){
         driver.manage().window().maximize();
