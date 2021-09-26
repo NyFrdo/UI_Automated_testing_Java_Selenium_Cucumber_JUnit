@@ -4,6 +4,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import controller.WebOperation;
 import elementDefiniton.WebElementDefinition;
+import util.ExcelUtil;
 
 public class StepDefinition {
     public static WebOperation operationStep = new WebOperation();
@@ -12,10 +13,12 @@ public class StepDefinition {
     public void login() throws Throwable{
         operationStep.login();
 //        operationStep.wait(5);
-        operationStep.clickElement(WebElementDefinition.loginButton);
-        operationStep.clickElement(WebElementDefinition.loginByAcccountAndPwdTab);
-        operationStep.clickElement(WebElementDefinition.userAccountInput);
 
+        operationStep.input(WebElementDefinition.userAccountInput, ExcelUtil.getCell("account"));
+        operationStep.input(WebElementDefinition.userAccountPassword,ExcelUtil.getCell("password"));
+        operationStep.clickElement(WebElementDefinition.loginButton);
+        operationStep.clickElement(WebElementDefinition.avaButton);
+        operationStep.clickElement(WebElementDefinition.uploadButton);
 //        System.out.println("aaa");
     }
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import util.BrowserPerference;
 import util.PropertiesUtil;
 
 import java.util.concurrent.TimeUnit;
@@ -14,7 +15,7 @@ public class WebController {
     public static WebDriver driver;
     static {
         System.setProperty("webdriver.chrome.driver", PropertiesUtil.getKey("driverPath"));
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(BrowserPerference.options);
     }
     public static WebDriverWait wait = new WebDriverWait(driver,PropertiesUtil.getLongKey("waitSeconds"));
     public static WebElement e ;
