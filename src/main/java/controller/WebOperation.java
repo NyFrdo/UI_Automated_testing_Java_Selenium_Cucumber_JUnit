@@ -31,6 +31,7 @@ public class WebOperation extends  WebController{
     }
 
     public void clearData(By by){
+        waitUntilElementAbleToPerformAction(by);
         e = driver.findElement(by);
         e.click();
         e.sendKeys(Keys.CONTROL,"A");
