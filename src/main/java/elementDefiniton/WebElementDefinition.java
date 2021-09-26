@@ -3,12 +3,11 @@ package elementDefiniton;
 import org.openqa.selenium.By;
 
 public class WebElementDefinition {
-    public static By avaButton =  By.xpath("//div//div[@class='toolbar-btn toolbar-btn-login csdn-toolbar-fl toolbar-subMenu-box']");
-    public static By profilePerson =  By.xpath("//li//i[contains(@class,'person')]");
-    public static By loginButton =  By.xpath("//div[contains(@class,'toolbar-btn-login')]");
-    public static By loginByAcccountAndPwdTab =  By.id("tabOne");
-    public static By userAccountInput =  By.id("all");
-    public static By userAccountPassword =  By.id("password-number");
+    public static By avaButton =  By.xpath("//*[contains(@class,'gWel-avatar')]//a[contains(@class,'nui-faceEdit ')]//img");
+    public static By uploadButton =  By.className("m-input-file");
+    public static By loginButton =  By.id("dologin");
+    public static By userAccountInput =  By.xpath("//div[@class='u-input box']//input[@name='email']");
+    public static By userAccountPassword =  By.xpath("//div[@class='u-input box']//input[@name='password']");
 
 //    public static By avaButton =  By.xpath("");
 //    public static By avaButton =  By.xpath("");
