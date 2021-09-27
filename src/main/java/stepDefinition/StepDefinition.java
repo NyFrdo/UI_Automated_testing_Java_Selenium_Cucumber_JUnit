@@ -13,12 +13,16 @@ public class StepDefinition {
     public void login() throws Throwable{
         operationStep.login();
 //        operationStep.wait(5);
-
+        operationStep.switchToIframe("login");
         operationStep.input(WebElementDefinition.userAccountInput, ExcelUtil.getCell("account"));
         operationStep.input(WebElementDefinition.userAccountPassword,ExcelUtil.getCell("password"));
         operationStep.clickElement(WebElementDefinition.loginButton);
+
         operationStep.clickElement(WebElementDefinition.avaButton);
+        operationStep.switchToDefaultContent();
+        operationStep.switchToIframe("avatar");
         operationStep.clickElement(WebElementDefinition.uploadButton);
+//        operationStep.clickByJS(WebElementDefinition.uploadButton);
 //        System.out.println("aaa");
     }
 
