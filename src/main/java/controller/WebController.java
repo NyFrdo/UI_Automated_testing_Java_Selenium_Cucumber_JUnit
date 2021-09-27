@@ -1,6 +1,8 @@
 package controller;
 
+import elementDefiniton.WebElementDefinition;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +21,7 @@ public class WebController {
     }
     public static WebDriverWait wait = new WebDriverWait(driver,PropertiesUtil.getLongKey("waitSeconds"));
     public static WebElement e ;
-
+    public static JavascriptExecutor executor = new ChromeDriver();
 
 
     public static void waitUntilElementAbleToPerformAction(String xpath){
@@ -34,14 +36,9 @@ public class WebController {
     }
 
     public static void waitUntilElementAbleToPerformAction(By by){
-//        wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        wait.until(ExpectedConditions.elementToBeClickable(by));
-        try {
-            wait.wait(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+//        wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
 
@@ -51,5 +48,18 @@ public class WebController {
         } catch (InterruptedException interruptedException) {
             interruptedException.printStackTrace();
         }
+    }
+
+    public static void switchToIframe(String iframeId){
+        driver.switchTo().frame(driver.findElement(WebElementDefinition.getIframe(iframeId)));
+    }
+
+    public static void switchToDefaultContent( ){
+        driver.switchTo().defaultContent();
+    }
+
+    public static void clickByJS(By by){
+        executor.executeScript("arguments[0].click()",
+                driver.findElement(by));
     }
 }
