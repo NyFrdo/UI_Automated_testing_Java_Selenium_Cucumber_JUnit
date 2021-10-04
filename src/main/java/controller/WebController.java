@@ -21,7 +21,7 @@ public class WebController {
     }
     public static WebDriverWait wait = new WebDriverWait(driver,PropertiesUtil.getLongKey("waitSeconds"));
     public static WebElement e ;
-    public static JavascriptExecutor executor = new ChromeDriver();
+    public static JavascriptExecutor executor = (JavascriptExecutor) driver;
 
 
     public static void waitUntilElementAbleToPerformAction(String xpath){

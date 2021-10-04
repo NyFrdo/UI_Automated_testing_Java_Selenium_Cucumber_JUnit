@@ -1,0 +1,2 @@
+1-5
+When input 100100 with value 100 should generate output 700100 , rule validate succeed
