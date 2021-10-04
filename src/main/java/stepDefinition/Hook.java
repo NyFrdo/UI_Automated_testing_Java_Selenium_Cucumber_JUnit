@@ -15,10 +15,10 @@ import java.time.format.DateTimeFormatter;
 
 public class Hook extends WebController {
 
-    @After
-    public void beforeScenario(){
-        System.out.println("start");
-    }
+//    @After
+//    public void beforeScenario(){
+//        System.out.println("start");
+//    }
 
 //    @After
     public void afterScenario(Scenario scenario){
