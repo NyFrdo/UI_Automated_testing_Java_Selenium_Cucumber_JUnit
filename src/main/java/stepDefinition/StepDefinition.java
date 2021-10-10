@@ -21,8 +21,10 @@ public class StepDefinition {
         operationStep.clickElement(WebElementDefinition.avaButton);
         operationStep.switchToDefaultContent();
         operationStep.switchToIframe("avatar");
-        operationStep.clickElement(WebElementDefinition.uploadButton);
+//        operationStep.clickElementByAction(WebElementDefinition.uploadButton);
+//        operationStep.waitUntilElementAbleToPerformAction(WebElementDefinition.uploadButton);
 //        operationStep.clickByJS(WebElementDefinition.uploadButton);
+        operationStep.clickElementByAction(WebElementDefinition.uploadButton);
 //        System.out.println("aaa");
     }
 
