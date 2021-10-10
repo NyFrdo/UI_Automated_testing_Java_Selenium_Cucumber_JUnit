@@ -38,31 +38,28 @@ public class WebController {
     public static void waitUntilElementAbleToPerformAction(By by){
         waitUntilElementPresentToPerformAction(by);
         waitUntilElementVisibletToPerformAction(by);
-        waitUntilElementClickableToPerformAction(by);
+//        waitUntilElementClickableToPerformAction(by);
     }
 
 
     public static void waitUntilElementPresentToPerformAction(By by){
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        wait.until(ExpectedConditions.elementToBeClickable(by));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+//        wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
     public static void waitUntilElementVisibletToPerformAction(By by){
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
+    public static void waitUntilElementInvisibletToPerformAction(By by){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+    }
+
     public static void waitUntilElementClickableToPerformAction(By by){
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
-    public static void wait(int i){
-        try {
-            TimeUnit.SECONDS.sleep(i);
-        } catch (InterruptedException interruptedException) {
-            interruptedException.printStackTrace();
-        }
-    }
 
     public static void switchToIframe(String iframeId){
         driver.switchTo().frame(driver.findElement(WebElementDefinition.getIframe(iframeId)));
