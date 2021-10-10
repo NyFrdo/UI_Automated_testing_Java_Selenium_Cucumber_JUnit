@@ -7,27 +7,30 @@ import org.openqa.selenium.interactions.Actions;
 import util.BrowserPerference;
 import util.PropertiesUtil;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class WebOperation extends  WebController{
     public static Actions action = new Actions(driver);
     public static BrowserPerference pref = new BrowserPerference();
 
-    public void login(){
+    public void login(String site){
         driver.manage().window().maximize();
-        driver.get(PropertiesUtil.getKey("testSite"));
+        driver.get(PropertiesUtil.getKey(site));
         System.out.println();
     }
 
     public void clickElement(By by){
-        waitUntilElementAbleToPerformAction(by);
+//        waitUntilElementAbleToPerformAction(by);
         e = driver.findElement(by);
         e.click();
     }
 
     public void clickElementByAction(By by){
-        waitUntilElementPresentToPerformAction(by);
+//        waitUntilElementPresentToPerformAction(by);
         e = driver.findElement(by);
-        action.moveToElement(e)
+//        action.moveToElement(e).click().perform();
+        action.click(e).perform();
     }
 
     public void input(By by,String value){
@@ -46,6 +49,14 @@ public class WebOperation extends  WebController{
 
     public void closeAlert(){
         driver.switchTo().alert().accept();
+    }
+
+    public static void wait(int i){
+        try {
+            TimeUnit.SECONDS.sleep(i);
+        } catch (InterruptedException interruptedException) {
+            interruptedException.printStackTrace();
+        }
     }
 
 }
