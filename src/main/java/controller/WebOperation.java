@@ -24,6 +24,12 @@ public class WebOperation extends  WebController{
         e.click();
     }
 
+    public void clickElementByAction(By by){
+        waitUntilElementPresentToPerformAction(by);
+        e = driver.findElement(by);
+        action.moveToElement(e)
+    }
+
     public void input(By by,String value){
         clearData(by);
         e.sendKeys(value);
