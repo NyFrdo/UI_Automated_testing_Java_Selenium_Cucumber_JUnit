@@ -6,6 +6,8 @@ import controller.WebOperation;
 import elementDefiniton.WebElementDefinition;
 import util.ExcelUtil;
 
+import java.io.File;
+
 public class StepDefinition {
     public static WebOperation operationStep = new WebOperation();
 
@@ -52,8 +54,10 @@ public class StepDefinition {
         operationStep.wait(1);
         operationStep.login("avaSite");
         operationStep.clickElementByAction(WebElementDefinition.uploadbutton);
+        operationStep.wait(1);
+        operationStep.upload(new File(ExcelUtil.getCell("imagepath")).getAbsolutePath());
 
-
+        operationStep.wait(3);
 
     }
 //    https://passport.baidu.com/v3/ucenter/accountportrait
