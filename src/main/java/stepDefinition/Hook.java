@@ -7,6 +7,7 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,21 +21,22 @@ public class Hook extends WebController {
 //        System.out.println("start");
 //    }
 
-//    @After
-    public void afterScenario(Scenario scenario){
+    @After
+    public void after(Scenario scenario) throws Exception{
         if (scenario.isFailed()){
             File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             try {
                 String currentDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmm"));
                 String screenshotName = "["+scenario.getId().split(";")[0]+"]"+"-"+scenario.getId().split(";")[1]+"-"+currentDateTime +".jpg";
                 File destFile = new File(System.getProperty("user.dir") + "/ScreenCapture/" + screenshotName);
-//                FileUtils.copyFile(srcFile, destFile);
+                FileUtil.copyFile(srcFile, destFile);
             } catch (Exception e) {
 //            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 //        driver.
+        driver.quit();
     }
 
 
