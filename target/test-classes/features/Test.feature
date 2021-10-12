@@ -1,5 +1,5 @@
 Feature:test
-  Scenario Outline: Test
+  Scenario Outline: upload avator
     Given Login baidu
     And upload avator
 
