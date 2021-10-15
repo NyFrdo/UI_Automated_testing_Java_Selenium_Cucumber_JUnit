@@ -1,8 +1,12 @@
 package util;
 
+
+import org.apache.commons.io.FileUtils;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class FileUtil {
     public static void copyFile(File srcFile,File destFile)throws Exception{
@@ -11,10 +15,15 @@ public class FileUtil {
 
     public static void copyFile(File srcFile,File destFile,boolean preserveFileDate) throws Exception{
         checkFileRequirements(srcFile,destFile);
-        docopyFile(srcFile,destFile,true);
+        docopyFile(srcFile,destFile);
     }
 
-    public static void docopyFile(File srcFile,File destFile,boolean preserveFileDate) throws Exception{
+    public static void docopyFile(File srcFile,File destFile) throws Exception{
+        if (destFile.exists() && destFile.isDirectory()){
+            throw new IOException("Destination '"+ destFile + "' exists but is a directory");
+        }
+        Files.copy(srcFile.toPath(),destFile.toPath());
+//        FileUtils
 
     }
 
@@ -33,6 +42,9 @@ public class FileUtil {
         }
         if (src.getCanonicalPath().equals(dest.getCanonicalPath())) {
             throw new IOException("Source '" + src + "' and destination '" + dest + "' are the same");
+        }
+        if (dest.exists() && dest.canWrite() == false){
+            throw new IOException("Destination '" + dest + "' exists but is read-only");
         }
 
         //1067
