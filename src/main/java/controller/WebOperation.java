@@ -53,14 +53,14 @@ public class WebOperation extends  WebController{
         driver.switchTo().alert().accept();
     }
 
-    public static void wait(int i){
+    public void wait(int i){
         try {
             TimeUnit.SECONDS.sleep(i);
         } catch (InterruptedException interruptedException) {
             interruptedException.printStackTrace();
         }
     }
-     public static void upload(String fileName){
+     public void upload(String fileName){
          Robot robot = null;
          try {
              robot = new Robot();
