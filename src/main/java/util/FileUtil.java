@@ -34,6 +34,7 @@ public class FileUtil {
         if (src.getCanonicalPath().equals(dest.getCanonicalPath())) {
             throw new IOException("Source '" + src + "' and destination '" + dest + "' are the same");
         }
+
         //1067
     }
 }

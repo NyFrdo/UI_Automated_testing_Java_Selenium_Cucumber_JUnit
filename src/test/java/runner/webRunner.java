@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 
         glue={"stepDefinition" },
         monochrome = true,
+        plugin = { "pretty", "html:target/cucumber", "json:target/cucumber.json" },
+//        format
         strict=true
 )
 
