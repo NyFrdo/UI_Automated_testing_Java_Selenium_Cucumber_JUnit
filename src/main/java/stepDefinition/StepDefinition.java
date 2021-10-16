@@ -1,6 +1,6 @@
 package stepDefinition;
 
-import controller.WebController;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import controller.WebOperation;
@@ -16,14 +16,14 @@ public class StepDefinition {
     public void login() throws Throwable{
         operationStep.login("testSite");
 //        operationStep.wait(5);
-        WebController.switchToIframe("login");
+        operationStep.switchToIframe("login");
         operationStep.input(WebElementDefinition.userAccountInput, ExcelUtil.getCell("account"));
         operationStep.input(WebElementDefinition.userAccountPassword,ExcelUtil.getCell("password"));
         operationStep.clickElement(WebElementDefinition.loginButton);
 
         operationStep.clickElement(WebElementDefinition.avaButton);
-        WebController.switchToDefaultContent();
-        WebController.switchToIframe("avatar");
+        operationStep.switchToDefaultContent();
+        operationStep.switchToIframe("avatar");
         System.out.println(operationStep);
         //crossarea issue
 //        operationStep.clickElementByAction(WebElementDefinition.uploadButton);
@@ -52,7 +52,7 @@ public class StepDefinition {
         operationStep.input(WebElementDefinition.userAccountInput, ExcelUtil.getCell("Micorsoftaccount"));
         operationStep.input(WebElementDefinition.userAccountPassword, ExcelUtil.getCell("Micorsofpassword"));
         operationStep.clickElement(WebElementDefinition.submitButton);
-        WebController.waitUntilElementInvisibletToPerformAction(WebElementDefinition.submitButton);
+        operationStep.waitUntilElementInvisibletToPerformAction(WebElementDefinition.submitButton);
 //        operationStep.wait(1);
 //        operationStep.login("avaSite");
         operationStep.clickElementByAction(WebElementDefinition.uploadbutton);
