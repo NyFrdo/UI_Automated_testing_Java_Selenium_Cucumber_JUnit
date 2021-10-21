@@ -77,12 +77,12 @@ public class batchDataRunner {
         DataConvert.littleRunner("100201","700223","55","000000793");
         System.out.println("1-15");
         DataConvert.littleRunner("100300","700300","90","000000793");
-        System.out.println("1-16");
-        DataConvert.littleRunner("100301","700301","90","000000793");
+//        System.out.println("1-16");
+//        DataConvert.littleRunner("100301","700301","90","000000793");
         System.out.println("1-17");
         DataConvert.littleRunner("100300","700310","91","000000793");
-        System.out.println("1-18");
-        DataConvert.littleRunner("100301","700311","91","000000793");
+//        System.out.println("1-18");
+//        DataConvert.littleRunner("100301","700311","91","000000793");
         System.out.println("1-20");
         DataConvert.littleRunner("100400","700400","10","000000793");
         System.out.println("1-25");
@@ -212,15 +212,15 @@ public class batchDataRunner {
         System.out.println("1-15");
         DataConvert.littleRunner("100300","700300","89","000000793");
         DataConvert.littleRunner("100300","700300","80","000000793");
-        System.out.println("1-16");
-        DataConvert.littleRunner("100301","700301","89","000000793");
-        DataConvert.littleRunner("100301","700301","80","000000793");
+//        System.out.println("1-16");
+//        DataConvert.littleRunner("100301","700301","89","000000793");
+//        DataConvert.littleRunner("100301","700301","80","000000793");
         System.out.println("1-17");
         DataConvert.littleRunner("100300","700310","90","000000793");
         DataConvert.littleRunner("100300","700310","80","000000793");
-        System.out.println("1-18");
-        DataConvert.littleRunner("100301","700311","90","000000793");
-        DataConvert.littleRunner("100301","700311","80","000000793");
+//        System.out.println("1-18");
+//        DataConvert.littleRunner("100301","700311","90","000000793");
+//        DataConvert.littleRunner("100301","700311","80","000000793");
         System.out.println("1-20");
         DataConvert.littleRunner("100400","700400","8","000000793");
         System.out.println("1-21");
@@ -241,11 +241,11 @@ public class batchDataRunner {
         DataConvert.littleRunner("100500","700521","35.5","000000793");
         DataConvert.littleRunner("100500","700521","38.1","000000793");
         DataConvert.littleRunner("100500","700521","40.0","000000793");
-        System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥38.1 )
-        DataConvert.littleRunner("100501","700522","36","000000793");
-        DataConvert.littleRunner("100501","700522","35.5","000000793");
-        DataConvert.littleRunner("100501","700522","38.1","000000793");
-        DataConvert.littleRunner("100501","700522","40.0","000000793");
+//        System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥38.1 )
+//        DataConvert.littleRunner("100501","700522","36","000000793");
+//        DataConvert.littleRunner("100501","700522","35.5","000000793");
+//        DataConvert.littleRunner("100501","700522","38.1","000000793");
+//        DataConvert.littleRunner("100501","700522","40.0","000000793");
         System.out.println("1-36 37");
         DataConvert.littleRunner("100700","700701","3","000000793");
         DataConvert.littleRunner("100700","700702","15","000000793");
