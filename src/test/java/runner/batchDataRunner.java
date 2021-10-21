@@ -1,6 +1,10 @@
+package runner;
+
 import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
 import sun.security.mscapi.PRNG;
+import util.DBoperation;
+import util.DataConvert;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -9,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Runner {
+public class batchDataRunner {
     public static Map<String,String> multipleInputList = new LinkedHashMap<>();
 
     public static void main(String[] args) throws Exception{
@@ -42,7 +46,7 @@ public class Runner {
         if (!flag.contains("not")) positiveRunner();else negativeRunner();
     }
 
-    public static void emptyFile(File file) throws  Exception{
+    public static void emptyFile(File file){
         if (file.exists()){
             file.delete();
         }
