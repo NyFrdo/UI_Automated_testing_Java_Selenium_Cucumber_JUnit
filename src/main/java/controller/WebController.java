@@ -24,7 +24,7 @@ public class WebController {
     public static JavascriptExecutor executor = (JavascriptExecutor) driver;
 
 
-    public static void waitUntilElementAbleToPerformAction(String xpath){
+    public void waitUntilElementAbleToPerformAction(String xpath){
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
@@ -35,45 +35,45 @@ public class WebController {
         }
     }
 
-    public static void waitUntilElementAbleToPerformAction(By by){
+    public void waitUntilElementAbleToPerformAction(By by){
         waitUntilElementPresentToPerformAction(by);
         waitUntilElementVisibletToPerformAction(by);
 //        waitUntilElementClickableToPerformAction(by);
     }
 
 
-    public static void waitUntilElementPresentToPerformAction(By by){
+    public void waitUntilElementPresentToPerformAction(By by){
         wait.until(ExpectedConditions.presenceOfElementLocated(by));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 //        wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
-    public static void waitUntilElementVisibletToPerformAction(By by){
+    public void waitUntilElementVisibletToPerformAction(By by){
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
 
-    public static void waitUntilElementInvisibletToPerformAction(By by){
+    public void waitUntilElementInvisibletToPerformAction(By by){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
 
-    public static void waitUntilElementClickableToPerformAction(By by){
+    public void waitUntilElementClickableToPerformAction(By by){
         wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
 
-    public static void switchToIframe(String iframeId){
+    public void switchToIframe(String iframeId){
         driver.switchTo().frame(driver.findElement(WebElementDefinition.getIframe(iframeId)));
     }
 
-    public static void switchToIframe(Integer iframeIndex){
+    public void switchToIframe(Integer iframeIndex){
         driver.switchTo().frame(iframeIndex);
     }
 
-    public static void switchToDefaultContent( ){
+    public void switchToDefaultContent( ){
         driver.switchTo().defaultContent();
     }
 
-    public static void clickByJS(By by){
+    public void clickByJS(By by){
         executor.executeScript("arguments[0].click()",
                 driver.findElement(by));
     }
