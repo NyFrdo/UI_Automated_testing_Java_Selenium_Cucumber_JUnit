@@ -95,7 +95,7 @@ public class DBoperation {
 
     public static Integer insertElementData(String elementId, String patientKey, String caseNo , Integer elementValueDtm) throws Exception{
         String sql = " insert into clin_cc_element_data (element_id,element_type,hosp,patient_key,case_no,adm_dtm,day_id,ref_data_dtm,data_status,record_key_1,record_key_2," +
-                "update_dtm,element_value_dec,display_dtm,element_value_dt) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','"+ LocalDateTime.parse(getAdmissionTime(patientKey), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SS")).plusDays(1) +"','1','',''," +
+                "update_dtm,element_value_dec,display_dtm,element_value_dt) values(?,'indicator','VH',?,?,'2021-02-25 07:57:00.000','20210629','"+ LocalDateTime.parse(getAdmissionTime(patientKey), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")).plusDays(1) +"','1','',''," +
                 "convert(datetime,'2021-09-02 17:22:00', 20),'1','',dateadd(DAY, ?, CONVERT(date,GETDATE()))) ";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1,elementId);
