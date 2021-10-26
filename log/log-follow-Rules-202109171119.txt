@@ -135,10 +135,10 @@ When input 100400 with value 15 should generate output 500710 , rule validate su
 When input 100300 with value 90 should generate output 500710 , rule validate succeed
 When input 101031 with value 1 should generate output 500710 , rule validate succeed
 3-10
-When input 100700 with value 3 should generate output 700311 , rule validate succeed
-When input 100700 with value 15 should generate output 700311 , rule validate succeed
-When input 101702 with value 24 should generate output 700311 , rule validate succeed
-When input 101737 with value 1 should generate output 700311 , rule validate succeed
+When input 100700 with value 3 should generate output 700314 , rule validate succeed
+When input 100700 with value 15 should generate output 700314 , rule validate succeed
+When input 101702 with value 24 should generate output 700314 , rule validate succeed
+When input 101737 with value 1 should generate output 700314 , rule validate succeed
 3-20
 When input 100600 with value 100 should generate output 700312 , rule validate succeed
 When input 100100 with value 80 should generate output 700312 , rule validate succeed
@@ -146,9 +146,9 @@ When input 100100 with value 80 should generate output 700312 , rule validate su
 When input {102800,Integar=2, 100500,String=36} with value {102800,Integar=2, 100500,String=36} should generate output 500720 , rule validate succeed
 5-20
 When input {100400,String=22, 100005,String=13, 100600,String=100} with value {100400,String=22, 100005,String=13, 100600,String=100} should generate output 700313 , rule validate succeed
-Input :{100400,String=22, 100500,String=13} value : {100400,String=22, 100500,String=13} and actual output is [100400, 100500, 500710, 500100, 500200, 700500, 700501, 700521, 700410, 700411, 700421] and expected output is 700313 rule validate fail
-Input :{100400,String=22, 100600,String=101} value : {100400,String=22, 100600,String=101} and actual output is [100400, 100600, 500710, 500100, 700410, 700411, 700421] and expected output is 700313 rule validate fail
-Input :{100500,String=13, 100600,String=101} value : {100500,String=13, 100600,String=101} and actual output is [100500, 100600, 500710, 500100, 500200, 700500, 700501, 700521] and expected output is 700313 rule validate fail
+When input {100400,String=22, 100005,String=13} with value {100400,String=22, 100005,String=13} should generate output 700313 , rule validate succeed
+When input {100400,String=22, 100600,String=100} with value {100400,String=22, 100600,String=100} should generate output 700313 , rule validate succeed
+When input {100005,String=13, 100600,String=100} with value {100005,String=13, 100600,String=100} should generate output 700313 , rule validate succeed
 10-5
 When input 100000 with value 8 should generate output 500000 , rule validate succeed
 10-10
@@ -168,14 +168,12 @@ When input 101031 with value 1 should generate output 500100 , rule validate suc
 10-15
 When input 100500 with value 34.9 should generate output 500200 , rule validate succeed
 When input 100100 with value 80 should generate output 500200 , rule validate succeed
-Input :100600 value : 101 and actual output is [100600] and expected output is 500200 rule validate fail
+When input 100600 with value 100 should generate output 500200 , rule validate succeed
 When input 100200 with value 40 should generate output 500200 , rule validate succeed
 When input 100300 with value 89 should generate output 500200 , rule validate succeed
 10-20
-Input :{100500,String=13, 100301,String=91, 100400,String=22} value : {100500,String=13, 100301,String=91, 100400,String=22} and actual output is [100500, 100301, 100400, 500710, 500100, 500200, 700500, 700501, 700521, 700410, 700411, 700421] and expected output is 500300 rule validate fail
-Input :{100500,String=34.9, 100301,String=91} value : {100500,String=34.9, 100301,String=91} and actual output is [100500, 100301, 500710, 500100, 500200, 700500, 700501, 700521] and expected output is 500300 rule validate fail
-Input :{100500,String=13, 100400,String=22} value : {100500,String=13, 100400,String=22} and actual output is [100500, 100400, 500710, 500100, 500200, 700500, 700501, 700521, 700410, 700411, 700421] and expected output is 500300 rule validate fail
-Input :{100301,String=91, 100400,String=22, 100500,String=13} value : {100301,String=91, 100400,String=22, 100500,String=13} and actual output is [100301, 100400, 100500, 500710, 500100, 500200, 700500, 700501, 700521, 700410, 700411, 700421] and expected output is 500300 rule validate fail
+When input {100500,String=35, 100700,String=15, 100400,String=22, 100600,String=100} with value {100500,String=35, 100700,String=15, 100400,String=22, 100600,String=100} should generate output 500300 , rule validate succeed
+When input {100500,String=39, 100700,String=15, 100400,String=22, 100600,String=100} with value {100500,String=39, 100700,String=15, 100400,String=22, 100600,String=100} should generate output 500300 , rule validate succeed
 10-25
 When input 100702 with value 1 should generate output 500400 , rule validate succeed
 When input 100708 with value 1 should generate output 500400 , rule validate succeed
@@ -230,6 +228,6 @@ When input 102500 with value 1 should generate output 500800 , rule validate suc
 When input 102800 with value -1 should generate output 500700 , rule validate succeed
 When input {102800,Integar=2, 100500,String=36} with value {102800,Integar=2, 100500,String=36} should generate output 500700 , rule validate succeed
 10-65
-Input :102000 value : 1 and actual output is [102000, 702001, 702000] and expected output is 501000 rule validate fail
+When input 102000 with value 1 should generate output 501000 , rule validate succeed
 When input 102100 with value 1 should generate output 501000 , rule validate succeed
-Input :{102000,Integar=1, 702010,Integar=1} value : {102000,Integar=1, 702010,Integar=1} and actual output is [702010, 102000, 702000, 702001, 702001, 702000, 702001, 702000] and expected output is 501000 rule validate fail
+When input {102100,Integar=1, 102000,Integar=1} with value {102100,Integar=1, 102000,Integar=1} should generate output 501000 , rule validate succeed

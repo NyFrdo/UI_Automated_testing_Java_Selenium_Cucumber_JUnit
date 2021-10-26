@@ -21,3 +21,11 @@ When input 100600 with value 95 should generate output 700611 , rule validate su
 When input 100600 with value 100 should generate output 700611 , rule validate succeed
 When input 100600 with value 200 should generate output 700611 , rule validate succeed
 When input 100600 with value 210 should generate output 700611 , rule validate succeed
+1-10
+When input 100200 with value 49 should generate output 700200 , rule validate succeed
+When input 100200 with value 40 should generate output 700200 , rule validate succeed
+1-11
+When input 100201 with value 49 should generate output 700201 , rule validate succeed
+When input 100201 with value 40 should generate output 700201 , rule validate succeed
+1-12
+When input 100200 with value 40 should generate output 700202 , rule validate succeed

@@ -1,5 +1,0 @@
-10-20
-When input {100500,String=35, 100700,String=15, 100400,String=22, 100600,String=100} with value {100500,String=35, 100700,String=15, 100400,String=22, 100600,String=100} should generate output 500300 , rule validate succeed
-Input :{100500,String=35, 100301,String=90, 100005,String=13, 100600,String=100} value : {100500,String=35, 100301,String=90, 100005,String=13, 100600,String=100} and actual output is [100500, 100301, 100005, 100600, 700311, 500710, 700312, 700313, 500100, 500200, 700611, 700500, 700501, 700600, 700521, 700005] and expected output is 500300 rule validate fail
-When input {100500,String=35, 101702,String=24, 100400,String=22, 100600,String=100} with value {100500,String=35, 101702,String=24, 100400,String=22, 100600,String=100} should generate output 500300 , rule validate succeed
-When input {100500,String=35, 101737,String=1, 100400,String=22, 100005,String=13} with value {100500,String=35, 101737,String=1, 100400,String=22, 100005,String=13} should generate output 500300 , rule validate succeed

@@ -1,0 +1,91 @@
+1-5
+Input :100100 value : 101 and actual output is [100100] and expected output is 700100 rule validate fail
+1-6
+Input :100100 value : 90 and actual output is [100100, 500710, 700312, 500200, 700100, 700111] and expected output is 700101 rule validate fail
+1-7
+Input :100600 value : 90 and actual output is [100600, 500710, 700312, 500200, 700611, 700600] and expected output is 700601 rule validate fail
+1-8
+Input :100100 value : 110 and actual output is [100100] and expected output is 700111 rule validate fail
+1-9
+Input :100600 value : 110 and actual output is [100600] and expected output is 700611 rule validate fail
+1-10
+Input :100200 value : 50 and actual output is [100200, 500710, 700222] and expected output is 700200 rule validate fail
+1-11
+Input :100201 value : 50 and actual output is [100201, 500710, 700223] and expected output is 700201 rule validate fail
+1-12
+Input :100200 value : 50 and actual output is [100200, 500710, 700222] and expected output is 700202 rule validate fail
+Input :100200 value : 55 and actual output is [100200] and expected output is 700222 rule validate fail
+1-13
+Input :100201 value : 50 and actual output is [100201, 500710, 700223] and expected output is 700203 rule validate fail
+1-14
+Input :100201 value : 55 and actual output is [100201] and expected output is 700223 rule validate fail
+1-15
+Input :100300 value : 90 and actual output is [100300, 500710, 700310] and expected output is 700300 rule validate fail
+1-16
+Input :100301 value : 90 and actual output is [100301, 500710, 700311] and expected output is 700301 rule validate fail
+1-17
+Input :100300 value : 91 and actual output is [100300] and expected output is 700310 rule validate fail
+1-18
+Input :100301 value : 91 and actual output is [100301] and expected output is 700311 rule validate fail
+1-20
+Input :100400 value : 10 and actual output is [100400] and expected output is 700400 rule validate fail
+1-25
+Input :100500 value : 36 and actual output is [100500, 500710, 700521] and expected output is 700500 rule validate fail
+1-26
+Input :100500 value : 36 and actual output is [100500, 500710, 700521] and expected output is 700501 rule validate fail
+1-30
+Input :100600 value : 101 and actual output is [100600] and expected output is 700600 rule validate fail
+1-31
+Input :100500 value : 37 and actual output is [100500] and expected output is 700521 rule validate fail
+1-32
+Input :100501 value : 37 and actual output is [100501] and expected output is 700522 rule validate fail
+1-36 37
+Input :100700 value : 4 and actual output is [100700] and expected output is 700701 rule validate fail
+Input :100700 value : 12 and actual output is [100700] and expected output is 700702 rule validate fail
+1-38
+Input :101737 value : 0.1 and actual output is [101737] and expected output is 701737 rule validate fail
+1-39
+Input :101702 value : 20 and actual output is [101702] and expected output is 701702 rule validate fail
+1-40
+Input :100200 value : 100 and actual output is [100200] and expected output is 700210 rule validate fail
+1-41
+Input :100201 value : 100 and actual output is [100201] and expected output is 700211 rule validate fail
+1-42
+Input :100200 value : 110 and actual output is [100200, 500710, 700222, 700210] and expected output is 700212 rule validate fail
+1-43
+Input :100201 value : 110 and actual output is [100201, 500710, 700223, 700211] and expected output is 700213 rule validate fail
+1-45 46
+Input :100400 value : 20 and actual output is [100400, 500710, 700421] and expected output is 700410 rule validate fail
+Input :100400 value : 20 and actual output is [100400, 500710, 700421] and expected output is 700411 rule validate fail
+1-47
+Input :100400 value : 14 and actual output is [100400] and expected output is 700421 rule validate fail
+1-60
+Input :100500 value : 37 and actual output is [100500] and expected output is 700510 rule validate fail
+1-65
+Input :100300 value : 100 and actual output is [100300] and expected output is 702900 rule validate fail
+1-70
+Input :102700 value : 10 and actual output is [102700] and expected output is 702700 rule validate fail
+1-75
+Input :102000 value : 3 and actual output is [102000, 702001, 501000] and expected output is 702000 rule validate fail
+1-77 78
+Input :100300 value : 10 and actual output is [100300, 500710, 500100, 500200, 700300, 700310, 702900] and expected output is 702001 rule validate fail
+Input :100300 value : 10 and actual output is [100300, 500710, 500100, 500200, 700300, 700310, 702900] and expected output is 702101 rule validate fail
+1-80
+Input :102100 value : 3 and actual output is [102100, 702101, 501000] and expected output is 702100 rule validate fail
+1-90
+Input :101010 value : 5 and actual output is [101010] and expected output is 701010 rule validate fail
+1-100
+Input :100005 value : 15 and actual output is [100005] and expected output is 700005 rule validate fail
+5-5
+Input :{102800,Integar=2} value : {102800,Integar=2} and actual output is [102800, 500700, 500600, 500620] and expected output is 500720 rule validate fail
+5-20
+Input :{100400,String=22} value : {100400,String=22} and actual output is [100400, 500710, 500100, 700410, 700411, 700421] and expected output is 500720 rule validate fail
+Input :{100500,String=13} value : {100500,String=13} and actual output is [100500, 500710, 500100, 500200, 700500, 700501, 700521] and expected output is 500720 rule validate fail
+Input :{100600,String=101} value : {100600,String=101} and actual output is [100600] and expected output is 500720 rule validate fail
+10-5
+Input :100000 value : 6 and actual output is [100000] and expected output is 500000 rule validate fail
+10-20
+10-35
+Input :102800 value : -2 and actual output is [102800, 500620] and expected output is 500600 rule validate fail
+10-40
+Input :102800 value : -3 and actual output is [102800] and expected output is 500620 rule validate fail
