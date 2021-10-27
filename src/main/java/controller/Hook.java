@@ -1,4 +1,4 @@
-package stepDefinition;
+package controller;
 
 import controller.WebController;
 import cucumber.api.Scenario;

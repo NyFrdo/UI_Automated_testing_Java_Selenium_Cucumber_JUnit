@@ -1,7 +1,7 @@
 Feature:test
-  Scenario Outline: upload avator
+  Scenario Outline: upload Avatar
     Given Login baidu
-    And upload avator
+    And upload Avatar
 
     Examples:
     ||

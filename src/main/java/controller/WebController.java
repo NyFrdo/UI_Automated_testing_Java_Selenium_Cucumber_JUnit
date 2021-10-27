@@ -1,6 +1,6 @@
 package controller;
 
-import elementDefiniton.WebElementDefinition;
+import elementDefiniton.BaiduHomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +10,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.BrowserPerference;
 import util.PropertiesUtil;
-
-import java.util.concurrent.TimeUnit;
 
 public class WebController {
     public static WebDriver driver;
@@ -35,34 +33,34 @@ public class WebController {
         }
     }
 
-    public void waitUntilElementAbleToPerformAction(By by){
-        waitUntilElementPresentToPerformAction(by);
-        waitUntilElementVisibletToPerformAction(by);
-//        waitUntilElementClickableToPerformAction(by);
+    public void waitUntilElementAbleToPerformAction(WebElement e){
+        waitUntilElementPresentToPerformAction(e);
+        waitUntilElementVisibletToPerformAction(e);
+        waitUntilElementClickableToPerformAction(e);
     }
 
 
-    public void waitUntilElementPresentToPerformAction(By by){
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-//        wait.until(ExpectedConditions.elementToBeClickable(by));
+    public void waitUntilElementPresentToPerformAction(WebElement e){
+//        wait.until(ExpectedConditions.pres(e));
+        wait.until(ExpectedConditions.visibilityOf(e));
+        wait.until(ExpectedConditions.elementToBeClickable(e));
     }
 
-    public void waitUntilElementVisibletToPerformAction(By by){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    public void waitUntilElementVisibletToPerformAction(WebElement e){
+        wait.until(ExpectedConditions.visibilityOf(e));
     }
 
-    public void waitUntilElementInvisibletToPerformAction(By by){
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+    public void waitUntilElementInvisibletToPerformAction(WebElement e){
+        wait.until(ExpectedConditions.invisibilityOf(e));
     }
 
-    public void waitUntilElementClickableToPerformAction(By by){
-        wait.until(ExpectedConditions.elementToBeClickable(by));
+    public void waitUntilElementClickableToPerformAction(WebElement e){
+        wait.until(ExpectedConditions.elementToBeClickable(e));
     }
 
 
     public void switchToIframe(String iframeId){
-        driver.switchTo().frame(driver.findElement(WebElementDefinition.getIframe(iframeId)));
+        driver.switchTo().frame(iframeId);
     }
 
     public void switchToIframe(Integer iframeIndex){
@@ -73,9 +71,9 @@ public class WebController {
         driver.switchTo().defaultContent();
     }
 
-    public void clickByJS(By by){
+    public void clickByJS(WebElement e){
         executor.executeScript("arguments[0].click()",
-                driver.findElement(by));
+                e);
     }
 
 }

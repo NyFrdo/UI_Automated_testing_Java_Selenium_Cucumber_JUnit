@@ -16,9 +16,9 @@ import java.util.Map;
 public class batchDataRunner {
     public static Map<String,String> multipleInputList = new LinkedHashMap<>();
 
-    public static void main(String[] args) throws Exception{
-        fireRunner(true);
-        fireRunner(false);
+    public static void main(String[] args) {
+//        fireRunner(true);
+//        fireRunner(false);
     }
 
     public static void fireRunner(Boolean flag) throws  Exception{

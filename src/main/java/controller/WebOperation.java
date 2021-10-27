@@ -2,6 +2,7 @@ package controller;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import util.BrowserPerference;
@@ -21,29 +22,26 @@ public class WebOperation extends  WebController{
     public void login(String site){
         driver.manage().window().maximize();
         driver.get(PropertiesUtil.getKey(site));
-        System.out.println();
     }
 
-    public void clickElement(By by){
-        waitUntilElementAbleToPerformAction(by);
-        e = driver.findElement(by);
+    public void clickElement(WebElement e){
+        waitUntilElementAbleToPerformAction(e);
         e.click();
     }
 
-    public void clickElementByAction(By by){
-        e = driver.findElement(by);
+    public void clickElementByAction(WebElement e){
         action.click(e).perform();
     }
 
-    public void input(By by,String value){
-        clearData(by);
+    public void input(WebElement e,String value){
+        clearData(e);
         e.sendKeys(value);
         e.sendKeys(Keys.TAB);
     }
 
-    public void clearData(By by){
-        waitUntilElementAbleToPerformAction(by);
-        e = driver.findElement(by);
+    public void clearData(WebElement e){
+        waitUntilElementAbleToPerformAction(e);
+        
         e.click();
         e.sendKeys(Keys.CONTROL,"A");
         e.sendKeys(Keys.BACK_SPACE);
