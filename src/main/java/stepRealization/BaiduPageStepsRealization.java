@@ -12,8 +12,8 @@ import java.io.File;
 
 public class BaiduPageStepsRealization extends WebController {
     public static WebOperation operationStep = new WebOperation();
-    public static BaiduHomePage baiduHome = PageFactory.initElements(driver,BaiduHomePage.class);
-    public static BaiduSelfProfilePage baiduProfile = PageFactory.initElements(driver,BaiduSelfProfilePage.class);
+    public static BaiduHomePage baiduHome = new BaiduHomePage(driver);
+    public static BaiduSelfProfilePage baiduProfile = new BaiduSelfProfilePage(driver);
 
     public void loginBaidu() {
         operationStep.login("testSite");
