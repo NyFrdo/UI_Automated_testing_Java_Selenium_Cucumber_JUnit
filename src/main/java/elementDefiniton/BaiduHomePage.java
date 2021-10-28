@@ -1,7 +1,9 @@
 package elementDefiniton;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class BaiduHomePage {
     @FindBy(id = "TANGRAM__PSP_11__userName")
@@ -16,5 +18,8 @@ public class BaiduHomePage {
     @FindBy(id = "s-top-loginbtn")
     public WebElement loginEntrance;
 
+    public BaiduHomePage(WebDriver driver){
+        PageFactory.initElements(driver, this);
+    }
 
  }
