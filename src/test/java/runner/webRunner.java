@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
                 "src/test/resources/features/test.feature",
         },
 
-        glue={"qa/stepDefinition"},
+        glue={"qa/stepDefinition","util"},
         monochrome = true,
         plugin = { "pretty", "html:target/cucumber", "json:target/cucumber.json" },
 //        format
