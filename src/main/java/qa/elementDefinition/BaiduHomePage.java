@@ -1,4 +1,4 @@
-package qa.elementDefiniton;
+package qa.elementDefinition;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +18,9 @@ public class BaiduHomePage {
     @FindBy(id = "s-top-loginbtn")
     public WebElement loginEntrance;
 
+    public String cancelButton = "//?[@id='?']";
+
+    public BaiduHomePage(){ }
     public BaiduHomePage(WebDriver driver){
         PageFactory.initElements(driver, this);
     }

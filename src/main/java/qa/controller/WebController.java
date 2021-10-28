@@ -1,5 +1,6 @@
 package qa.controller;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +10,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.BrowserPerference;
 import util.PropertiesUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WebController {
     public static WebDriver driver;
@@ -21,15 +25,47 @@ public class WebController {
     public static JavascriptExecutor executor = (JavascriptExecutor) driver;
 
 
-    public void waitUntilElementAbleToPerformAction(String xpath){
+    public WebElement getElement(String element,String... replacedString){
+        return waitUntilElementAbleToPerformAction(getDynamicElementXpath(element, replacedString));
+    }
+
+    public String getDynamicElementXpath(String element,String... replacedString){
+        String[] elementInfoArray = element.split("\\.");
+        try{
+            int count = 0;
+            int fromIndex = 0;
+            List<Integer> indexList = new ArrayList<>();
+            Class<?> pageClass = Class.forName(PropertiesUtil.getKey("elementPackagePath")+"."+elementInfoArray[0]);
+            Object object = pageClass.getConstructors()[0].newInstance();
+            element = pageClass.getField(elementInfoArray[1]).get(object).toString();
+            while(element.indexOf('?',fromIndex) != -1){
+                count++;
+                indexList.add(element.indexOf('?',fromIndex));
+                fromIndex = element.indexOf('?',fromIndex)+1;
+            }
+            if(replacedString.length != indexList.size()){
+                throw new Exception(PropertiesUtil.getKey("mappingMessage"));
+            }
+            for (String string : replacedString) {
+                element = element.replaceFirst("\\?",string);
+            }
+//        }catch (/*IllegalAccessException | InstantiationException |*/ ClassNotFoundException | NoSuchFieldException  e){
+        }catch (Exception e){
+            if (e.getMessage().contains(PropertiesUtil.getKey("mappingMessage"))){
+                Assert.fail(PropertiesUtil.getKey("mappingMessage"));
+            }
+            e.printStackTrace();
+        }
+
+        return element;
+    }
+
+    public WebElement waitUntilElementAbleToPerformAction(String xpath){
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-        try {
-            wait.wait(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        waitFor(1);
+        return driver.findElement(By.xpath(xpath));
     }
 
     public void waitUntilElementAbleToPerformAction(WebElement e){
@@ -71,6 +107,14 @@ public class WebController {
 
     public void clickByJS(WebElement e){
         executor.executeScript("arguments[0].click()",e);
+    }
+
+    public void waitFor(int n){
+        try {
+            wait.wait(n);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
