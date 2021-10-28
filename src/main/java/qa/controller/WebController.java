@@ -1,6 +1,5 @@
-package controller;
+package qa.controller;
 
-import elementDefiniton.BaiduHomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +33,6 @@ public class WebController {
     }
 
     public void waitUntilElementAbleToPerformAction(WebElement e){
-        waitUntilElementPresentToPerformAction(e);
         waitUntilElementVisibletToPerformAction(e);
         waitUntilElementClickableToPerformAction(e);
     }
@@ -72,8 +70,7 @@ public class WebController {
     }
 
     public void clickByJS(WebElement e){
-        executor.executeScript("arguments[0].click()",
-                e);
+        executor.executeScript("arguments[0].click()",e);
     }
 
 }

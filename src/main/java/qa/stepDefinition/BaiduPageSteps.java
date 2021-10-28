@@ -1,14 +1,9 @@
-package stepDefinition;
+package qa.stepDefinition;
 
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import controller.WebOperation;
-import elementDefiniton.BaiduHomePage;
-import stepRealization.BaiduPageStepsRealization;
-import util.ExcelUtil;
-
-import java.io.File;
+import qa.stepRealization.BaiduPageStepsRealization;
 
 public class BaiduPageSteps {
     public static BaiduPageStepsRealization baiduPageSteps = new BaiduPageStepsRealization();
