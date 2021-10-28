@@ -1,11 +1,10 @@
-package stepRealization;
+package qa.stepRealization;
 
 
-import controller.WebController;
-import controller.WebOperation;
-import elementDefiniton.BaiduHomePage;
-import elementDefiniton.BaiduSelfProfilePage;
-import org.openqa.selenium.support.PageFactory;
+import qa.controller.WebController;
+import qa.controller.WebOperation;
+import qa.elementDefiniton.BaiduHomePage;
+import qa.elementDefiniton.BaiduSelfProfilePage;
 import util.ExcelUtil;
 
 import java.io.File;
@@ -22,9 +21,12 @@ public class BaiduPageStepsRealization extends WebController {
         operationStep.input(baiduHome.userAccountPassword, ExcelUtil.getCell("microsoftPassword"));
         operationStep.clickElement(baiduHome.submitButton);
         operationStep.waitUntilElementInvisibletToPerformAction(baiduHome.submitButton);
+        operationStep.wait(2);
     }
 
     public void uploadAvatar() {
+        operationStep.login("avaSite");
+        operationStep.waitUntilElementVisibletToPerformAction(baiduProfile.uploadButton);
         operationStep.clickElementByAction(baiduProfile.uploadButton);
         operationStep.wait(1);
         operationStep.upload(new File(ExcelUtil.getCell("imagePath")).getAbsolutePath());

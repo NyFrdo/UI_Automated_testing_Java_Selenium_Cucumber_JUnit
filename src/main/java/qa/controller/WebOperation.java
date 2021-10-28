@@ -1,9 +1,7 @@
-package controller;
+package qa.controller;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import util.BrowserPerference;
 import util.PropertiesUtil;
@@ -41,7 +39,6 @@ public class WebOperation extends  WebController{
 
     public void clearData(WebElement e){
         waitUntilElementAbleToPerformAction(e);
-        
         e.click();
         e.sendKeys(Keys.CONTROL,"A");
         e.sendKeys(Keys.BACK_SPACE);

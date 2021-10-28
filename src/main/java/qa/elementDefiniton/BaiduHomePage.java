@@ -1,4 +1,4 @@
-package elementDefiniton;
+package qa.elementDefiniton;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +9,7 @@ public class BaiduHomePage {
     @FindBy(id = "TANGRAM__PSP_11__userName")
     public WebElement userAccountInput;
 
-    @FindBy(id = "s-top-loginbtn")
+    @FindBy(id = "TANGRAM__PSP_11__password")
     public  WebElement userAccountPassword;
 
     @FindBy(id = "TANGRAM__PSP_11__submit")

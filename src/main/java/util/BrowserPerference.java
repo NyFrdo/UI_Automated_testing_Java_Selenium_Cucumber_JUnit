@@ -1,7 +1,6 @@
 package util;
 
-import controller.WebController;
-import org.openqa.selenium.chrome.ChromeDriver;
+import qa.controller.WebController;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.HashMap;
