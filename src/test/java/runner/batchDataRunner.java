@@ -16,9 +16,9 @@ import java.util.Map;
 public class batchDataRunner {
     public static Map<String,String> multipleInputList = new LinkedHashMap<>();
 
-    public static void main(String[] args) throws Exception{
-        fireRunner(true);
-        fireRunner(false);
+    public static void main(String[] args) {
+//        fireRunner(true);
+//        fireRunner(false);
     }
 
     public static void fireRunner(Boolean flag) throws  Exception{
@@ -77,12 +77,12 @@ public class batchDataRunner {
         DataConvert.littleRunner("100201","700223","55","000000793");
         System.out.println("1-15");
         DataConvert.littleRunner("100300","700300","90","000000793");
-        System.out.println("1-16");
-        DataConvert.littleRunner("100301","700301","90","000000793");
+//        System.out.println("1-16");
+//        DataConvert.littleRunner("100301","700301","90","000000793");
         System.out.println("1-17");
         DataConvert.littleRunner("100300","700310","91","000000793");
-        System.out.println("1-18");
-        DataConvert.littleRunner("100301","700311","91","000000793");
+//        System.out.println("1-18");
+//        DataConvert.littleRunner("100301","700311","91","000000793");
         System.out.println("1-20");
         DataConvert.littleRunner("100400","700400","10","000000793");
         System.out.println("1-25");
@@ -149,7 +149,7 @@ public class batchDataRunner {
         DataConvert.littleRunnerWhenMultipleInput(multipleInputList,"500720","000000793");//MID 700410 700005
         multipleInputList.clear();
         System.out.println("10-5");
-        DataConvert.littleRunner("100000","500000","6","000000793");
+        DataConvert.littleRunner("100000","500000","5","000000793");
         System.out.println("10-20");//700500 700510 700313 700314
         multipleInputList.put(("100500"+","+"String"),"35");
         multipleInputList.put(("100700"+","+"String"),"15");
@@ -212,15 +212,15 @@ public class batchDataRunner {
         System.out.println("1-15");
         DataConvert.littleRunner("100300","700300","89","000000793");
         DataConvert.littleRunner("100300","700300","80","000000793");
-        System.out.println("1-16");
-        DataConvert.littleRunner("100301","700301","89","000000793");
-        DataConvert.littleRunner("100301","700301","80","000000793");
+//        System.out.println("1-16");
+//        DataConvert.littleRunner("100301","700301","89","000000793");
+//        DataConvert.littleRunner("100301","700301","80","000000793");
         System.out.println("1-17");
         DataConvert.littleRunner("100300","700310","90","000000793");
         DataConvert.littleRunner("100300","700310","80","000000793");
-        System.out.println("1-18");
-        DataConvert.littleRunner("100301","700311","90","000000793");
-        DataConvert.littleRunner("100301","700311","80","000000793");
+//        System.out.println("1-18");
+//        DataConvert.littleRunner("100301","700311","90","000000793");
+//        DataConvert.littleRunner("100301","700311","80","000000793");
         System.out.println("1-20");
         DataConvert.littleRunner("100400","700400","8","000000793");
         System.out.println("1-21");
@@ -241,11 +241,11 @@ public class batchDataRunner {
         DataConvert.littleRunner("100500","700521","35.5","000000793");
         DataConvert.littleRunner("100500","700521","38.1","000000793");
         DataConvert.littleRunner("100500","700521","40.0","000000793");
-        System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥38.1 )
-        DataConvert.littleRunner("100501","700522","36","000000793");
-        DataConvert.littleRunner("100501","700522","35.5","000000793");
-        DataConvert.littleRunner("100501","700522","38.1","000000793");
-        DataConvert.littleRunner("100501","700522","40.0","000000793");
+//        System.out.println("1-32");//out Temp abnormal raw indicator  (Temp ≤ 36.0 OR ≥38.1 )
+//        DataConvert.littleRunner("100501","700522","36","000000793");
+//        DataConvert.littleRunner("100501","700522","35.5","000000793");
+//        DataConvert.littleRunner("100501","700522","38.1","000000793");
+//        DataConvert.littleRunner("100501","700522","40.0","000000793");
         System.out.println("1-36 37");
         DataConvert.littleRunner("100700","700701","3","000000793");
         DataConvert.littleRunner("100700","700702","15","000000793");
@@ -293,7 +293,7 @@ public class batchDataRunner {
         DataConvert.littleRunner("100005","700005", "10","000000793");
         System.out.println("3-5");//in  700521, 700522,700111, 700611, 700222, 700223, 700401, 700421, 700310,700311,101031
         DataConvert.littleRunner("100500","500710","36","000000793");//MID 700521
-        DataConvert.littleRunner("100501","500710","36","000000793");//MID 700522
+//        DataConvert.littleRunner("100501","500710","36","000000793");//MID 700522
         DataConvert.littleRunner("100100","500710","95","000000793");//MID 700111
         DataConvert.littleRunner("100600","500710","95","000000793");//MID 700611
         DataConvert.littleRunner("100200","500710","40","000000793");//MID 700222
@@ -350,7 +350,7 @@ public class batchDataRunner {
         DataConvert.littleRunner("100600","500100","80","000000793");//MID 700601
         DataConvert.littleRunner("100201","500100","40","000000793");//MID 700203
         DataConvert.littleRunner("100201","500100","111","000000793");//MID 700213
-        DataConvert.littleRunner("100301","500100","89","000000793");//MID 700301
+//        DataConvert.littleRunner("100301","500100","89","000000793");//MID 700301
         DataConvert.littleRunner("100500","500100","35","000000793");//MID 700501
         DataConvert.littleRunner("100005","500100","13","000000793");//MID 700005
         DataConvert.littleRunner("101031","500100","1","000000793");//MID 700005
