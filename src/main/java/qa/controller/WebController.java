@@ -20,7 +20,7 @@ public class WebController {
         System.setProperty("webdriver.chrome.driver", PropertiesUtil.getKey("driverPath"));
         driver = new ChromeDriver(BrowserPerference.options);
     }
-    public static WebDriverWait wait = new WebDriverWait(driver,PropertiesUtil.getLongKey("waitSeconds"));
+    public static WebDriverWait wait = new WebDriverWait(driver,PropertiesUtil.getLongKey("waitSeconds"),PropertiesUtil.getLongKey("freqSeconds"));
     public static WebElement e ;
     public static JavascriptExecutor executor = (JavascriptExecutor) driver;
 

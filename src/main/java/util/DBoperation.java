@@ -4,6 +4,7 @@ import java.sql.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -119,5 +120,16 @@ public class DBoperation {
         String sql = "exec dbo.clin_cc_calculation_element_data 'job1',1";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.execute();
+    }
+
+    public static void main(String[] args) {
+        //get not ordered array second largest number
+        int[] arrayone = {-1,-22,-55,-8,-100,-21};
+        int[] arraytwo = {12,23,34,21,99,78,65};
+        int[] arraythree = {-7,0,0,22,-55,0,22,-78,78,-78,122};
+        int minNum = Integer.MAX_VALUE;
+        int secToMinNum = Integer.MAX_VALUE-1;
+        Arrays.sort(arrayone);
+        System.out.println(arrayone[arrayone.length-2]);
     }
 }
