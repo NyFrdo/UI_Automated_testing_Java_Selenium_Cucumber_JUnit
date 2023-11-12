@@ -14,8 +14,6 @@ public class practice {
                 , "Release-12.05.235.1"
 
 //               "Release-22.05","Release-12.2"
-
-
         );
         List<String> ab = Lists.newArrayList();
         for (int j = 0; j < a.size(); j++) {
@@ -23,9 +21,10 @@ public class practice {
             ab.add(version);
         }
 
-        System.out.println(getheadandsort(ab, 0));
+//        System.out.println(getheadandsort(ab, 0));
 
 
+        System.out.println(compareVersion("Release-12.2.15", "Release-12.2"));;
     }
 
     public static String getheadandsort(List<String> ab, int coun)  {
@@ -97,4 +96,27 @@ public class practice {
 //        Collections.addAll(ab,a);
 //        return ab;
     }
+
+    public static String compareVersion(String version1, String version2) {
+        String[] v1 = version1.split("-")[1].split("\\.");
+        String[] v2 = version2.split("-")[1].split("\\.");
+        for (int i = 0; i < v1.length || i < v2.length; i++) {
+            int x = 0, y = 0;
+            if (i < v1.length) {
+                x = Integer.parseInt(v1[i]);
+            }
+            if (i < v2.length) {
+                y = Integer.parseInt(v2[i]);
+            }
+            if (x > y) {
+                return version1;
+            }
+            if (x < y) {
+                return version2;
+            }
+        }
+        return "0";
+    }
+
+
 }
